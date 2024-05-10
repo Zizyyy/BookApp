@@ -25,8 +25,18 @@ namespace BookApplication.Windows.UserWindows
         public ListLessonWindow()
         {
             InitializeComponent();
+            GetList();
         }
+        private void GetList()
+        {
+            List<Lesson> listLesson = new List<Lesson>();
+            
+            listLesson = EFClass.context.Lesson.ToList();
 
+            listLesson = listLesson.Where(x => x.Title.ToLower().Contains(TbSearch.Text.ToLower())).ToList();
+
+            LvLesson.ItemsSource = listLesson;
+        }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -37,6 +47,21 @@ namespace BookApplication.Windows.UserWindows
 
         private void BtnClose_MouseDown(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void TbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            GetList();
+        }
+
+        private void BtnOpen_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null) { return; }
+            var lesson = button.DataContext as Lesson;
+            SelectedLessonWindow selectedLessonWindow = new SelectedLessonWindow(lesson);
+            selectedLessonWindow.Show();
             this.Close();
         }
     }

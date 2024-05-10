@@ -11,7 +11,7 @@
         AllowsTransparency="True"
         Background="Transparent"
         Title="AuthorizationView" Height="650" Width="1200"
-    MouseDown="Window_MouseDown">
+        MouseDown="Window_MouseDown">
 
     <Border>
         <Border.Background>
@@ -23,12 +23,14 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="95"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="65"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="25"/>
             </Grid.ColumnDefinitions>
+            
             <Grid Grid.Row="0" 
                   Grid.Column="1">
                 <Button x:Name="BtnClose"
@@ -166,9 +168,11 @@
 
             <ListView x:Name="LvLesson"
                       Grid.Row="2"
+                      Grid.ColumnSpan="2"
                       Background="#1E1F22"
+                      Width="1180"
                       BorderThickness="0"
-                      d:ItemsSource="{d:SampleData ItemCount=5}"
+                       d:ItemsSource="{d:SampleData ItemCount=5}"
                       ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                       Margin="5">
                 <ListView.ItemsPanel>
@@ -178,29 +182,81 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border CornerRadius="5"
+                        <Border CornerRadius="3"
                                 BorderThickness="5"
                                 BorderBrush="#313338"
                                 Width="365"
-                                Height="125"
+                                Height="175"
                                 Margin="10 5 0 25">
                             <ScrollViewer>
                                 <StackPanel>
-                                    <TextBlock Text="    Операционные системы. Виды операционных систем"
+                                    <TextBlock Text="{Binding Title}"
                                                FontSize="22"
                                                FontFamily="Whitney Bold"
-                                               Foreground="#FCEA4A"
+                                               Foreground="#949BA4"
                                                HorizontalAlignment="Left"
-                                               TextWrapping="Wrap"/>
+                                               TextWrapping="Wrap"
+                                               Margin="10 5 0 0"/>
                                     <Button x:Name="BtnOpen"
-                                            Content="ОТКРЫТЬ" 
-                                            Margin="0 30 0 0" />
+                                            Height="35"
+                                            Width="100"
+                                            BorderThickness="0"
+                                            Content="Открыть"
+                                            Foreground="#FFFFFF"
+                                            FontFamily="Whitney Bold"
+                                            HorizontalAlignment="Center"
+                                            Cursor="Hand"
+                                            Margin="0 50 0 0"
+                                            Click="BtnOpen_Click">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Background" Value="#5865F2"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#4752C4"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsPressed" Value="True">
+                                                        <Setter Property="Background" Value="#3C45A5"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
                                 </StackPanel>
                             </ScrollViewer>
                         </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <StackPanel Grid.Row="3"
+                        HorizontalAlignment="Left"
+                        Margin="10 0 0 0">
+                <TextBlock Text="ПОИСК"
+                           Foreground="#949BA4"
+                           FontSize="12"
+                           FontFamily="Whitney Bold"
+                           Margin="0 0 0 0"/>
+
+                <TextBox x:Name="TbSearch"
+                         Width="370"
+                         Height="40"
+                         Background="#1E1F22"
+                         BorderThickness="0"
+                         Foreground="#BDC0C3"
+                         Padding="10 10 0 0"
+                         FontFamily="Whitney Medium"
+                         FontSize="16" TextChanged="TbSearch_TextChanged">
+                </TextBox>
+            </StackPanel>
         </Grid>
     </Border>
 </Window>

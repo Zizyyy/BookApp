@@ -31,9 +31,19 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Lesson" EntityType="Model.Lesson" />
+    <EntitySet Name="Quiz" EntityType="Model.Quiz" />
     <EntitySet Name="Role" EntityType="Model.Role" />
     <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagrams" />
     <EntitySet Name="User" EntityType="Model.User" />
+    <AssociationSet Name="FK_Quiz_Lesson" Association="Model.FK_Quiz_Lesson">
+      <End Role="Lesson" EntitySet="Lesson" />
+      <End Role="Quiz" EntitySet="Quiz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quiz_User" Association="Model.FK_Quiz_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Quiz" EntitySet="Quiz" />
+    </AssociationSet>
     <AssociationSet Name="FK_User_Role" Association="Model.FK_User_Role">
       <End Role="Role" EntitySet="Role" />
       <End Role="User" EntitySet="User" />
@@ -50,6 +60,28 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="Lesson">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContentLesson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhotoPath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Quiz" Relationship="Model.FK_Quiz_Lesson" FromRole="Lesson" ToRole="Quiz" />
+  </EntityType>
+  <EntityType Name="Quiz">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LessonID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Result" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Lesson" Relationship="Model.FK_Quiz_Lesson" FromRole="Quiz" ToRole="Lesson" />
+    <NavigationProperty Name="User" Relationship="Model.FK_Quiz_User" FromRole="Quiz" ToRole="User" />
+  </EntityType>
   <EntityType Name="Role">
     <Key>
       <PropertyRef Name="Id" />
@@ -81,8 +113,33 @@
     <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
     <Property Name="DateOfRegistration" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Quiz" Relationship="Model.FK_Quiz_User" FromRole="User" ToRole="Quiz" />
     <NavigationProperty Name="Role" Relationship="Model.FK_User_Role" FromRole="User" ToRole="Role" />
   </EntityType>
+  <Association Name="FK_Quiz_Lesson">
+    <End Type="Model.Lesson" Role="Lesson" Multiplicity="1" />
+    <End Type="Model.Quiz" Role="Quiz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lesson">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Quiz">
+        <PropertyRef Name="LessonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quiz_User">
+    <End Type="Model.User" Role="User" Multiplicity="1" />
+    <End Type="Model.Quiz" Role="Quiz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Quiz">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_User_Role">
     <End Type="Model.Role" Role="Role" Multiplicity="1" />
     <End Type="Model.User" Role="User" Multiplicity="*" />

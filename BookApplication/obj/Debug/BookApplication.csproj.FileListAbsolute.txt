@@ -29,3 +29,5 @@ D:\Works\BookApplication\BookApplication\obj\Debug\Resources\ScrollBarStyle.baml
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\ListLessonWindow.g.cs
 D:\Works\BookApplication\BookApplication\obj\Debug\App.baml
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\ListLessonWindow.baml
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\SelectedLessonWindow.g.cs
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\SelectedLessonWindow.baml

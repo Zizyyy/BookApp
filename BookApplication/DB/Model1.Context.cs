@@ -27,6 +27,8 @@ namespace BookApplication.DB
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Lesson> Lesson { get; set; }
+        public virtual DbSet<Quiz> Quiz { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
