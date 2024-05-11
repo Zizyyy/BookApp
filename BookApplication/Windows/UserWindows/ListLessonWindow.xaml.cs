@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,11 +23,21 @@ namespace BookApplication.Windows.UserWindows
     /// </summary>
     public partial class ListLessonWindow : Window
     {
+        public static User User;
+
         public ListLessonWindow()
         {
             InitializeComponent();
+            TblName.Text = User.LName + " " + User.FName + ": " + User.Role.Title;
             GetList();
         }
+
+        public static ListLessonWindow Auth(User user)
+        {
+            ListLessonWindow.User = user;
+            return new ListLessonWindow();
+        }
+
         private void GetList()
         {
             List<Lesson> listLesson = new List<Lesson>();
@@ -63,6 +74,16 @@ namespace BookApplication.Windows.UserWindows
             SelectedLessonWindow selectedLessonWindow = new SelectedLessonWindow(lesson);
             selectedLessonWindow.Show();
             this.Close();
+        }
+
+        private void BtnTest_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnVideoLesson_Click(object sender, RoutedEventArgs e)
+        {
+            //Process.Start(new ProcessStartInfo("https://www.twitch.tv/sqreendota2") { UseShellExecute = true });
         }
     }
 }

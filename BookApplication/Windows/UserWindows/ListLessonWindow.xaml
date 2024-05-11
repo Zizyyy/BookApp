@@ -109,7 +109,8 @@
                         Foreground="#FFFFFF"
                         FontFamily="Whitney Bold"
                         Cursor="Hand"
-                        Margin="0 0 35 0">
+                        Margin="0 0 35 0"
+                        Click="BtnTest_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#5865F2"/>
@@ -141,7 +142,8 @@
                         Foreground="#FFFFFF"
                         FontFamily="Whitney Bold"
                         Cursor="Hand"
-                        Margin="0 0 35 0">
+                        Margin="0 0 35 0"
+                        Click="BtnVideoLesson_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#5865F2"/>
@@ -164,6 +166,9 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
+
+                <TextBlock x:Name="TblName"
+                           Foreground="#ffffff"/>
             </StackPanel>
 
             <ListView x:Name="LvLesson"

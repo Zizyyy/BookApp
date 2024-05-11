@@ -53,8 +53,8 @@ namespace BookApplication.Windows
 
             if (authUser.RoleID == 1 && authUser.Email == TbEmail.Text && PbPassword.Password == authUser.Password)
             {
-                ListLessonWindow lessonWindow = new ListLessonWindow();
-                lessonWindow.Show();
+                //ListLessonWindow lessonWindow = new ListLessonWindow();
+                ListLessonWindow.Auth(authUser).Show();
 
                 Close();
             }
