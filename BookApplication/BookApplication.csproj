@@ -81,6 +81,9 @@
     <Compile Include="Windows\AdminWindows\AdminSelectedLessonWindow.xaml.cs">
       <DependentUpon>AdminSelectedLessonWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AdminWindows\UserListWindow.xaml.cs">
+      <DependentUpon>UserListWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
@@ -152,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AdminWindows\AdminSelectedLessonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminWindows\UserListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

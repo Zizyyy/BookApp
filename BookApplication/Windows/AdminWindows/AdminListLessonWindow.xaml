@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookApplication.Windows.AdminWindows"
         mc:Ignorable="d"
-            WindowStartupLocation="CenterScreen"
+           WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     ResizeMode="NoResize"
     AllowsTransparency="True"
@@ -69,6 +69,39 @@
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
+                <Button x:Name="BtnUserList"
+                        Height="45"
+                        Width="200"
+                        BorderThickness="0"
+                        Content="Список пользователей"
+                        Foreground="#FFFFFF"
+                        FontFamily="Whitney Bold"
+                        Cursor="Hand"
+                        Margin="0 0 15 0"
+                        Click="BtnUserList_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#5865F2"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#4752C4"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3C45A5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
                 <Button x:Name="BtnLesson"
                     Height="45"
                     Width="200"
@@ -77,7 +110,7 @@
                     Foreground="#FFFFFF"
                     FontFamily="Whitney Bold"
                     Cursor="Hand"
-                    Margin="0 0 35 0">
+                    Margin="0 0 15 0">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#5865F2"/>
@@ -109,7 +142,7 @@
                     Foreground="#FFFFFF"
                     FontFamily="Whitney Bold"
                     Cursor="Hand"
-                    Margin="0 0 35 0"
+                    Margin="0 0 15 0"
                     Click="BtnTest_Click">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -142,7 +175,7 @@
                     Foreground="#FFFFFF"
                     FontFamily="Whitney Bold"
                     Cursor="Hand"
-                    Margin="0 0 35 0">
+                    Margin="0 0 15 0">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#5865F2"/>

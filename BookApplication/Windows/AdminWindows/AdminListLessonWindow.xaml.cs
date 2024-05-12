@@ -99,5 +99,11 @@ namespace BookApplication.Windows.AdminWindows
         {
 
         }
+
+        private void BtnUserList_Click(object sender, RoutedEventArgs e)
+        {
+            UserListWindow.Auth(User).Show();
+            Close();
+        }
     }
 }
