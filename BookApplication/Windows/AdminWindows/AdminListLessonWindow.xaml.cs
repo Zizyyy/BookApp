@@ -27,7 +27,8 @@ namespace BookApplication.Windows.AdminWindows
         public AdminListLessonWindow()
         {
             InitializeComponent();
-            TblName.Text = User.LName + " " + User.FName + ": " + User.Role.Title;
+            TblRole.Text = User.Role.Title + ": ";
+            TblName.Text = User.LName + " " + User.FName;
 
 
             GetList();

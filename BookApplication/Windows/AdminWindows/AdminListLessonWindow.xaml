@@ -166,8 +166,16 @@
                     </Button.Template>
                 </Button>
 
+                <TextBlock x:Name="TblRole"
+                           FontSize="16"
+                           FontFamily="Whitney"
+                           VerticalAlignment="Center"
+                           Foreground="#949BA4"/>
                 <TextBlock x:Name="TblName"
-                       Foreground="#ffffff"/>
+                           FontSize="16"
+                           FontFamily="Whitney"
+                           VerticalAlignment="Center"
+                           Foreground="#ffffff"/>
             </StackPanel>
 
             <ListView x:Name="LvLesson"

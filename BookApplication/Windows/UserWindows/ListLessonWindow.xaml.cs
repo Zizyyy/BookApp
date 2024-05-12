@@ -28,7 +28,8 @@ namespace BookApplication.Windows.UserWindows
         public ListLessonWindow()
         {
             InitializeComponent();
-            TblName.Text = User.LName + " " + User.FName + ": " + User.Role.Title;
+            TblRole.Text = User.Role.Title +": ";
+            TblName.Text = User.LName + " " + User.FName;
             GetList();
         }
 
