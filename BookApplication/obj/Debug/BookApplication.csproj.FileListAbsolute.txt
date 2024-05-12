@@ -31,3 +31,9 @@ D:\Works\BookApplication\BookApplication\obj\Debug\App.baml
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\ListLessonWindow.baml
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\SelectedLessonWindow.g.cs
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\SelectedLessonWindow.baml
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminListLessonWindow.g.cs
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminListLessonWindow.baml
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AddEditLessonWindow.g.cs
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AddEditLessonWindow.baml
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminSelectedLessonWindow.g.cs
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminSelectedLessonWindow.baml

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using BookApplication.ClassHelper;
+using BookApplication.DB;
+using BookApplication.Windows.UserWindows;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,39 +15,38 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using BookApplication.ClassHelper;
-using BookApplication.DB;
-
-namespace BookApplication.Windows.UserWindows
+namespace BookApplication.Windows.AdminWindows
 {
     /// <summary>
-    /// Логика взаимодействия для ListLessonWindow.xaml
+    /// Логика взаимодействия для AdminListLessonWindow.xaml
     /// </summary>
-    public partial class ListLessonWindow : Window
+    public partial class AdminListLessonWindow : Window
     {
         public static User User;
 
-        public ListLessonWindow()
+        public AdminListLessonWindow()
         {
             InitializeComponent();
             TblName.Text = User.LName + " " + User.FName + ": " + User.Role.Title;
+
+
             GetList();
         }
 
-        public static ListLessonWindow Auth(User user)
+        public static AdminListLessonWindow Auth(User user)
         {
-            User = user;
-            return new ListLessonWindow();
+            AdminListLessonWindow.User = user;
+            return new AdminListLessonWindow();
         }
 
         private void GetList()
         {
             List<Lesson> listLesson = new List<Lesson>();
-            
+
             listLesson = EFClass.context.Lesson.ToList();
 
             listLesson = listLesson.Where(x => x.Title.ToLower().Contains(TbSearch.Text.ToLower())).ToList();
-            
+
             LvLesson.ItemsSource = listLesson;
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -71,19 +72,31 @@ namespace BookApplication.Windows.UserWindows
             var button = sender as Button;
             if (button == null) { return; }
             var lesson = button.DataContext as Lesson;
-            SelectedLessonWindow selectedLessonWindow = new SelectedLessonWindow(lesson);
+            AdminSelectedLessonWindow selectedLessonWindow = new AdminSelectedLessonWindow(lesson);
             selectedLessonWindow.Show();
             this.Close();
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditLessonWindow addEditLesson = new AddEditLessonWindow();
+            addEditLesson.Show();
+            Close();
+        }
+
+        private void BtnEditing_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null) { return; }
+            var listLesson = button.DataContext as Lesson;
+            AddEditLessonWindow addEditLesson = new AddEditLessonWindow(listLesson);
+            addEditLesson.Show();
+            Close();
         }
 
         private void BtnTest_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void BtnVideoLesson_Click(object sender, RoutedEventArgs e)
-        {
-            //Process.Start(new ProcessStartInfo("https://www.twitch.tv/sqreendota2") { UseShellExecute = true });
         }
     }
 }

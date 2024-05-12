@@ -177,7 +177,7 @@
                       Background="#1E1F22"
                       Width="1180"
                       BorderThickness="0"
-                       d:ItemsSource="{d:SampleData ItemCount=5}"
+                      d:ItemsSource="{d:SampleData ItemCount=5}"
                       ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                       Margin="5">
                 <ListView.ItemsPanel>
@@ -191,7 +191,7 @@
                                 BorderThickness="5"
                                 BorderBrush="#313338"
                                 Width="365"
-                                Height="175"
+                                Height="325"
                                 Margin="10 5 0 25">
                             <ScrollViewer>
                                 <StackPanel>
@@ -202,6 +202,19 @@
                                                HorizontalAlignment="Left"
                                                TextWrapping="Wrap"
                                                Margin="10 5 0 0"/>
+                                    <Image x:Name="ImgPhoto"
+                                           Width="200"
+                                           Height="200">
+                                        <Image.Source>
+                                            <Binding Path="PhotoPath">
+                                                <Binding.TargetNullValue>
+                                                    <ImageSource>
+                                                        /Assets/NoImage.png
+                                                    </ImageSource>
+                                                </Binding.TargetNullValue>
+                                            </Binding>
+                                        </Image.Source>
+                                    </Image>
                                     <Button x:Name="BtnOpen"
                                             Height="35"
                                             Width="100"
@@ -211,7 +224,7 @@
                                             FontFamily="Whitney Bold"
                                             HorizontalAlignment="Center"
                                             Cursor="Hand"
-                                            Margin="0 50 0 0"
+                                            Margin="0 10 0 0"
                                             Click="BtnOpen_Click">
                                         <Button.Style>
                                             <Style TargetType="Button">

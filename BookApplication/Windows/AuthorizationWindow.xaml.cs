@@ -1,5 +1,6 @@
 ﻿using BookApplication.ClassHelper;
 using BookApplication.DB;
+using BookApplication.Windows.AdminWindows;
 using BookApplication.Windows.UserWindows;
 using System;
 using System.Collections.Generic;
@@ -42,8 +43,7 @@ namespace BookApplication.Windows
                 PbPassword.Password = "";
                 return;
             }
-            if (string.IsNullOrWhiteSpace(TbEmail.Text) || authUser.Email != TbEmail.Text || string.IsNullOrWhiteSpace(PbPassword.Password)
-                || authUser.Password != PbPassword.Password)
+            if (string.IsNullOrWhiteSpace(TbEmail.Text) ||  string.IsNullOrWhiteSpace(PbPassword.Password))
             {
                 TblErrorMessage.Text = "НЕВЕРНЫЙ АДРЕС ЭЛ. ПОЧТЫ ИЛИ ПАРОЛЬ";
                 TbEmail.Text = "";
@@ -51,11 +51,16 @@ namespace BookApplication.Windows
                 return;
             }
 
-            if (authUser.RoleID == 1 && authUser.Email == TbEmail.Text && PbPassword.Password == authUser.Password)
+            if (authUser.RoleID == 1)
             {
                 //ListLessonWindow lessonWindow = new ListLessonWindow();
                 ListLessonWindow.Auth(authUser).Show();
 
+                Close();
+            }
+            else
+            {
+                AdminListLessonWindow.Auth(authUser).Show();
                 Close();
             }
         }

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Works\BookApplication\BookApplication\App.xaml
-6-452067486
+9-297568875
 2-973498431
-21-1677636531
+241170651190
 18-1614186081
-MainWindow.xaml;Resources\ScrollBarStyle.xaml;Windows\AuthorizationWindow.xaml;Windows\RegistrationWindow.xaml;Windows\UserWindows\ListLessonWindow.xaml;Windows\UserWindows\SelectedLessonWindow.xaml;
+MainWindow.xaml;Resources\ScrollBarStyle.xaml;Windows\AdminWindows\AddEditLessonWindow.xaml;Windows\AdminWindows\AdminListLessonWindow.xaml;Windows\AdminWindows\AdminSelectedLessonWindow.xaml;Windows\AuthorizationWindow.xaml;Windows\RegistrationWindow.xaml;Windows\UserWindows\ListLessonWindow.xaml;Windows\UserWindows\SelectedLessonWindow.xaml;
 
-False
+True
 

@@ -1,4 +1,5 @@
 ﻿using BookApplication.DB;
+using BookApplication.Windows.UserWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,19 +14,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace BookApplication.Windows.UserWindows
+namespace BookApplication.Windows.AdminWindows
 {
     /// <summary>
-    /// Логика взаимодействия для SelectedLessonWindow.xaml
+    /// Логика взаимодействия для AdminSelectedLessonWindow.xaml
     /// </summary>
-    public partial class SelectedLessonWindow : Window
+    public partial class AdminSelectedLessonWindow : Window
     {
-        public SelectedLessonWindow()
+        public AdminSelectedLessonWindow()
         {
             InitializeComponent();
         }
 
-        public SelectedLessonWindow(Lesson lesson)
+        public AdminSelectedLessonWindow(Lesson lesson)
         {
             InitializeComponent();
             TblTitle.Text = lesson.Title;
@@ -49,16 +50,16 @@ namespace BookApplication.Windows.UserWindows
         }
 
         private void BtnClose_MouseDown(object sender, RoutedEventArgs e)
-        {   
-            ListLessonWindow listLessonWindow = new ListLessonWindow();
-            listLessonWindow.Show();
+        {
+            AdminListLessonWindow adminListLesson = new AdminListLessonWindow();
+            adminListLesson.Show();
             this.Close();
         }
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
-            ListLessonWindow listLessonWindow = new ListLessonWindow();
-            listLessonWindow.Show();
+            AdminListLessonWindow adminListLesson = new AdminListLessonWindow();
+            adminListLesson.Show();
             this.Close();
         }
     }

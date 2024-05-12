@@ -65,7 +65,7 @@ namespace BookApplication.Windows
 
         private void TblSignIn_MouseDown(object sender, MouseButtonEventArgs e)
         {
-           AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
             authorizationWindow.Show();
             Close();
         }

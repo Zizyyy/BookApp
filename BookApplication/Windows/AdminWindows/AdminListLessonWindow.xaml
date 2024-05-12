@@ -1,0 +1,350 @@
+﻿<Window x:Class="BookApplication.Windows.AdminWindows.AdminListLessonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookApplication.Windows.AdminWindows"
+        mc:Ignorable="d"
+            WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    ResizeMode="NoResize"
+    AllowsTransparency="True"
+    Background="Transparent"
+    Title="AuthorizationView" Height="650" Width="1200"
+    MouseDown="Window_MouseDown">
+
+    <Border>
+        <Border.Background>
+            <SolidColorBrush Color="#313338"/>
+        </Border.Background>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="95"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="65"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="25"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" 
+              Grid.Column="1">
+                <Button x:Name="BtnClose"
+                        Height="24"
+                        Width="25"
+                        BorderThickness="0"
+                        Content="⨉"
+                        FontSize="15"
+                        BorderBrush="Transparent"
+                        Foreground="#A2A7AD"
+                        VerticalAlignment="Top"
+                        Cursor="Hand"
+                        Click="BtnClose_MouseDown">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#F23F42"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+                <Button x:Name="BtnLesson"
+                    Height="45"
+                    Width="200"
+                    BorderThickness="0"
+                    Content="Лекции"
+                    Foreground="#FFFFFF"
+                    FontFamily="Whitney Bold"
+                    Cursor="Hand"
+                    Margin="0 0 35 0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#5865F2"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#4752C4"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3C45A5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnTest"
+                    Height="45"
+                    Width="200"
+                    BorderThickness="0"
+                    Content="Тесты"
+                    Foreground="#FFFFFF"
+                    FontFamily="Whitney Bold"
+                    Cursor="Hand"
+                    Margin="0 0 35 0"
+                    Click="BtnTest_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#5865F2"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#4752C4"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3C45A5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnVideoLesson"
+                    Height="45"
+                    Width="200"
+                    BorderThickness="0"
+                    Content="Видеоуроки"
+                    Foreground="#FFFFFF"
+                    FontFamily="Whitney Bold"
+                    Cursor="Hand"
+                    Margin="0 0 35 0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#5865F2"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#4752C4"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3C45A5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <TextBlock x:Name="TblName"
+                       Foreground="#ffffff"/>
+            </StackPanel>
+
+            <ListView x:Name="LvLesson"
+                  Grid.Row="2"
+                  Grid.ColumnSpan="2"
+                  Background="#1E1F22"
+                  Width="1180"
+                  BorderThickness="0"
+                   d:ItemsSource="{d:SampleData ItemCount=5}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  Margin="5">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border CornerRadius="3"
+                            BorderThickness="5"
+                            BorderBrush="#313338"
+                            Width="365"
+                            Height="325"
+                            Margin="10 5 0 25">
+                            <ScrollViewer>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}"
+                                           FontSize="22"
+                                           FontFamily="Whitney Bold"
+                                           Foreground="#949BA4"
+                                           HorizontalAlignment="Left"
+                                           TextWrapping="Wrap"
+                                           Margin="10 5 0 0"/>
+                                    <Image x:Name="ImgPhoto"
+                                           Width="200"
+                                           Height="200">
+                                        <Image.Source>
+                                            <Binding Path="PhotoPath">
+                                                <Binding.TargetNullValue>
+                                                    <ImageSource>
+                                                        /Assets/NoImage.png
+                                                    </ImageSource>
+                                                </Binding.TargetNullValue>
+                                            </Binding>
+                                        </Image.Source>
+                                    </Image>
+                                    <StackPanel Orientation="Horizontal"
+                                                HorizontalAlignment="Center">
+                                        <Button x:Name="BtnOpen"
+                                                Height="35"
+                                                Width="100"
+                                                BorderThickness="0"
+                                                Content="Открыть"
+                                                Foreground="#FFFFFF"
+                                                FontFamily="Whitney Bold"
+                                                HorizontalAlignment="Center"
+                                                Cursor="Hand"
+                                                Margin="10 10 0 0"
+                                                Click="BtnOpen_Click">
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Background" Value="#5865F2"/>
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Background" Value="#4752C4"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsPressed" Value="True">
+                                                            <Setter Property="Background" Value="#3C45A5"/>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                             </Button.Style>
+                                            <Button.Template>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border Background="{TemplateBinding Background}">
+                                                        <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+
+                                        <Button x:Name="BtnEditing"
+                                                Height="24"
+                                                Width="24"
+                                                Cursor="Hand"
+                                                Click="BtnEditing_Click"
+                                                Margin="10 10 0 0">
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="BorderThickness" Value="0"/>
+                                                    <Setter Property="Background" Value="Transparent"/>
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Background" Value="Transparent"/>
+                                                            <Setter Property="BorderThickness" Value="0"/>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+                                            <Button.Template>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border Background="{TemplateBinding Background}">
+                                                        <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                            <Image Source="/Assets/Editing.png"/>
+                                        </Button>
+                                    </StackPanel>
+                                    
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackPanel Grid.Row="3"
+                        Orientation="Vertical"
+                        HorizontalAlignment="Left"
+                        Margin="10 0 0 0">
+                <TextBlock Text="ПОИСК"
+                       Foreground="#949BA4"
+                       FontSize="12"
+                       FontFamily="Whitney Bold"
+                       Margin="0 0 0 0"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left">
+                    
+                <TextBox x:Name="TbSearch"
+                     Width="370"
+                     Height="40"
+                     Background="#1E1F22"
+                     BorderThickness="0"
+                     Foreground="#BDC0C3"
+                     Padding="10 10 0 0"
+                     FontFamily="Whitney Medium"
+                     FontSize="16" TextChanged="TbSearch_TextChanged">
+                </TextBox>
+
+                <Button x:Name="BtnAdd"
+                        Height="35"
+                        Width="100"
+                        BorderThickness="0"
+                        Content="Добавить"
+                        Foreground="#FFFFFF"
+                        FontFamily="Whitney Bold"
+                        HorizontalAlignment="Center"
+                        Cursor="Hand"
+                        Margin="10 0 0 0"
+                        Click="BtnAdd_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#5865F2"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#4752C4"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3C45A5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

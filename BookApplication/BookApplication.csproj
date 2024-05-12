@@ -72,6 +72,15 @@
     <Compile Include="DB\Quiz.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AdminWindows\AddEditLessonWindow.xaml.cs">
+      <DependentUpon>AddEditLessonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdminWindows\AdminListLessonWindow.xaml.cs">
+      <DependentUpon>AdminListLessonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdminWindows\AdminSelectedLessonWindow.xaml.cs">
+      <DependentUpon>AdminSelectedLessonWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
@@ -128,6 +137,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Resources\ScrollBarStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminWindows\AddEditLessonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminWindows\AdminListLessonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminWindows\AdminSelectedLessonWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +214,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Editing.png" />
+    <Resource Include="Assets\NoImage.png" />
     <Content Include="DB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -207,8 +230,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Windows\AdminWindows\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
