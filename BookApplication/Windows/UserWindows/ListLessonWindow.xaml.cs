@@ -29,7 +29,14 @@ namespace BookApplication.Windows.UserWindows
         {
             InitializeComponent();
             TblRole.Text = User.Role.Title +": ";
-            TblName.Text = User.LName + " " + User.FName;
+            if (User.MName == null)
+            {
+                TblName.Text = $"{User.LName} {User.FName.Substring(1)}";
+            }
+            else
+            {
+                TblName.Text = User.LName + " " + User.FName.Substring(1) + ". " + $"{User.MName.Substring(1)}";
+            }
             GetList();
         }
 
