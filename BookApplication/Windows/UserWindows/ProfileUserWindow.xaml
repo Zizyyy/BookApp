@@ -5,8 +5,395 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookApplication.Windows.UserWindows"
         mc:Ignorable="d"
-        Title="ProfileUserWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="UserProfile" Height="400" Width="800"
+        MouseDown="Window_MouseDown">
+
+    <Border>
+        <Border.Background>
+            <SolidColorBrush Color="#313338"/>
+        </Border.Background>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="25"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" 
+              Grid.Column="1">
+                <Button x:Name="BtnClose"
+                    Height="24"
+                    Width="25"
+                    BorderThickness="0"
+                    Content="⨉"
+                    FontSize="15"
+                    BorderBrush="Transparent"
+                    Foreground="#A2A7AD"
+                    VerticalAlignment="Top"
+                    Cursor="Hand"
+                    Click="BtnClose_MouseDown">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#F23F42"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+
+            <StackPanel Orientation ="Horizontal"
+                        Height="Auto"
+                        Grid.Row="1"
+                        Margin="20 0 5 0">
+                <StackPanel>
+                    <TextBlock Text="АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ"
+                                Foreground="#949BA4"
+                                HorizontalAlignment="Left"
+                                FontSize="12"
+                                FontFamily="Whitney Bold"
+                                Margin="0 0 0 10"/>
+
+                    <TextBox x:Name="TbEmail"
+                             Grid.Row="1"
+                             IsEnabled="False"
+                             Width="370"
+                             Height="40"
+                             Background="#1E1F22"
+                             BorderThickness="0"
+                             Foreground="#BDC0C3"
+                             Padding="10 10 0 0"
+                             FontFamily="Whitney Medium"
+                             FontSize="16"
+                             Margin="0 0 0 25">
+                    </TextBox>
+
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left"
+                                Margin="0 0 0 5">
+                        <TextBlock Text="ФАМИЛИЯ"
+                                   Foreground="#949BA4"
+                                   HorizontalAlignment="Left"
+                                   FontSize="12"
+                                   FontFamily="Whitney Bold"/>
+                        <TextBlock Text="⚹"
+                                   Foreground="#F23F42"
+                                   HorizontalAlignment="Left"
+                                   FontSize="12"
+                                   FontFamily="Whitney Bold"
+                                   Margin="5 0 0 0"/>
+                    </StackPanel>
+                    <TextBox x:Name="TbLName"
+                             Width="370"
+                             Height="40"
+                             Background="#1E1F22"
+                             BorderThickness="0"
+                             Foreground="#BDC0C3"
+                             Padding="10 10 0 0"
+                             FontFamily="Whitney Medium"
+                             FontSize="16"
+                             Margin="0 0 0 25">
+                    </TextBox>
+
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left"
+                                Margin="0 0 0 5">
+                        <TextBlock Text="ИМЯ"
+                                   Foreground="#949BA4"
+                                   HorizontalAlignment="Left"
+                                   FontSize="12"
+                                   FontFamily="Whitney Bold"/>
+                        <TextBlock Text="⚹"
+                                   Foreground="#F23F42"
+                                   HorizontalAlignment="Left"
+                                   FontSize="12"
+                                   FontFamily="Whitney Bold"
+                                   Margin="5 0 0 0"/>
+                    </StackPanel>
+                    <TextBox x:Name="TbFName"
+                             Width="370"
+                             Height="40"
+                             Background="#1E1F22"
+                             BorderThickness="0"
+                             Foreground="#BDC0C3"
+                             Padding="10 10 0 0"
+                             FontFamily="Whitney Medium"
+                             FontSize="16"
+                             Margin="0 0 0 25">
+                    </TextBox>
+
+                    
+                </StackPanel>
+
+                <StackPanel Margin="15 0 0 0">
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left"
+                                Margin="0 0 0 5">   
+                        <TextBlock Text="ПАРОЛЬ"
+                                   Foreground="#949BA4"
+                                   HorizontalAlignment="Left"
+                                   FontSize="12"
+                                   FontFamily="Whitney Bold"/>
+                        <TextBlock Text="⚹"
+                                   Foreground="#F23F42"
+                                   HorizontalAlignment="Left"
+                                   FontSize="12"
+                                   FontFamily="Whitney Bold"
+                                   Margin="5 0 0 0"/>
+                    </StackPanel>
+                    <PasswordBox x:Name="PbPassword"
+                                 Width="370"
+                                 Height="40"
+                                 Background="#1E1F22"
+                                 BorderThickness="0"
+                                 Foreground="#BDC0C3"
+                                 Padding="10 10 0 0"
+                                 FontFamily="Whitney Medium"
+                                 FontSize="16"
+                                 MaxLength="50"
+                                 Margin="0 0 0 5">
+                    </PasswordBox>
+                    <CheckBox x:Name="CbPassword"
+                              Background="#1E1F22"
+                              Foreground="#BDC0C3"
+                              FontFamily="Whitney Bold"
+                              Content="ПОКАЗАТЬ ПАРОЛЬ"
+                              Checked="CbPassword_Checked">
+
+                    </CheckBox>
+
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left"
+                                Margin="0 10 0 5">       
+                        <TextBlock Text="ОТЧЕСТВО"
+                                   Foreground="#949BA4"
+                                   HorizontalAlignment="Left"
+                                   FontSize="12"
+                                   FontFamily="Whitney Bold"/>
+                    </StackPanel>
+                    <TextBox x:Name="TbMName"
+                             Width="370"
+                             Height="40"
+                             Background="#1E1F22"
+                             BorderThickness="0"
+                             Foreground="#BDC0C3"
+                             Padding="10 10 0 0"
+                             FontFamily="Whitney Medium"
+                             FontSize="16"
+                             Margin="0 0 0 25">         
+                    </TextBox>
+
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left"
+                                Margin="0 0 0 5">
+                        <TextBlock Text="ДАТА РОЖДЕНИЯ"
+                                   Foreground="#949BA4"
+                                   HorizontalAlignment="Left"
+                                   FontSize="12"
+                                   FontFamily="Whitney Bold"/>
+                        <TextBlock Text="⚹"
+                                   Foreground="#F23F42"
+                                   HorizontalAlignment="Left"
+                                   FontSize="12"
+                                   FontFamily="Whitney Bold"
+                                   Margin="5 0 0 0"/>       
+                    </StackPanel>
+                    <DatePicker x:Name="DpDateOfBirth"
+                                Width="200"
+                                Height="45"
+                                FontSize="16"
+                                HorizontalAlignment="Left"
+                                Margin="0 5 0 0"
+                                BorderThickness="0"/>
+                </StackPanel>
+                
+                
+            </StackPanel>
+            <Button x:Name="BtnSave"
+                    Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Width="200"
+                    Height="45"
+                    BorderThickness="0"
+                    Content="Сохранить"
+                    Foreground="#FFFFFF"
+                    FontFamily="Whitney Bold"
+                    Cursor="Hand"
+                    Click="BtnSave_Click"
+                    Margin="0 0 0 25">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#5865F2"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4752C4"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#3C45A5"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!--<StackPanel Grid.Column="0"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        HorizontalAlignment="Left"
+                        Margin="40 10 0 0">
+
+                <TextBlock Text="АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ"
+                           Foreground="#949BA4"
+                           HorizontalAlignment="Left"
+                           FontSize="12"
+                           FontFamily="Whitney Bold"
+                           Margin="0 0 0 10"/>
+
+                <TextBox x:Name="TbEmail"
+                         Width="370"
+                         Height="40"
+                         Background="#1E1F22"
+                         BorderThickness="0"
+                         Foreground="#BDC0C3"
+                         Padding="10 10 0 0"
+                         FontFamily="Whitney Medium"
+                         FontSize="16"
+                         Margin="0 0 0 25">
+                </TextBox>
+
+                <TextBlock Text="ПАРОЛЬ"
+                           Foreground="#949BA4"
+                           HorizontalAlignment="Left"
+                           FontSize="12"
+                           FontFamily="Whitney Bold"
+                           Margin="0 0 0 10"/>
+
+                <PasswordBox x:Name="PbPassword"
+                             Width="370"
+                             Height="40"
+                             Background="#1E1F22"
+                             BorderThickness="0"
+                             Foreground="#BDC0C3"
+                             Padding="10 10 0 0"
+                             FontFamily="Whitney Medium"
+                             FontSize="16"
+                             MaxLength="50"
+                             Margin="0 0 0 5">
+                </PasswordBox>
+
+                <TextBlock x:Name="TblErrorMessage"
+                           Foreground="#D56A6F"
+                           FontFamily="Whitney Medium"
+                           FontSize="12"
+                           Margin="0 0 0 10"/>
+
+                <TextBlock x:Name="TblReset"
+                           Foreground="#00A6F9"
+                           FontSize="12"
+                           Text="Забыли пароль?"
+                           Background="Transparent"
+                           FontFamily="Whitney Medium"
+                           Cursor="Hand"
+                           Margin="0 0 0 25">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextDecorations" Value="None"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="TextDecorations" Value="Baseline"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <Button x:Name="BtnSignIn"
+                    Height="45"
+                    BorderThickness="0"
+                    Content="Вход"
+                    Foreground="#FFFFFF"
+                    FontFamily="Whitney Bold"
+                    Cursor="Hand"
+                    Margin="0 0 0 15" Click="BtnSignIn_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#5865F2"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#4752C4"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3C45A5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left">
+                    <TextBlock Text="Нужна учетная запись?"
+                           FontSize="12"
+                           FontFamily="Whitney Medium"
+                           Foreground="#949BA4"
+                           Margin="0 0 5 0"/>
+                    <TextBlock x:Name="TblSignUp"
+                           Foreground="#00A6F9"
+                           FontSize="12"
+                           Text="Зарегистрироваться"
+                           Background="Transparent"
+                           FontFamily="Whitney Medium"
+                           Cursor="Hand"
+                           Margin="0 0 0 25" MouseDown="TblSignUp_MouseDown">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextDecorations" Value="None"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="TextDecorations" Value="Baseline"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>-->
+        </Grid>
+    </Border>
 </Window>

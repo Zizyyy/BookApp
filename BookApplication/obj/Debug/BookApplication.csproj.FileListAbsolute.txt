@@ -37,3 +37,5 @@ D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AddEditL
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AddEditLessonWindow.baml
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminSelectedLessonWindow.g.cs
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminSelectedLessonWindow.baml
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\ProfileUserWindow.g.cs
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\ProfileUserWindow.baml

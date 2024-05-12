@@ -176,7 +176,37 @@
                            FontSize="16"
                            FontFamily="Whitney"
                            VerticalAlignment="Center"
-                           Foreground="#ffffff"/>
+                           Foreground="#ffffff"
+                           Margin="5 0 0 0"/>
+                <Button x:Name="BtnProfile"
+                        Height="24"
+                        VerticalAlignment="Center"
+                        Width="24"
+                        Cursor="Hand"
+                        Click="BtnProfile_Click"
+                        Margin="10 0 0 0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Image Source="/Assets/UserIcon.png"/>
+                </Button>
             </StackPanel>
 
             <ListView x:Name="LvLesson"

@@ -16,5 +16,5 @@ D:\Works\BookApplication\BookApplication\App.xaml
 18-1614186081
 MainWindow.xaml;Resources\ScrollBarStyle.xaml;Windows\AdminWindows\AddEditLessonWindow.xaml;Windows\AdminWindows\AdminListLessonWindow.xaml;Windows\AdminWindows\AdminSelectedLessonWindow.xaml;Windows\AuthorizationWindow.xaml;Windows\RegistrationWindow.xaml;Windows\UserWindows\ListLessonWindow.xaml;Windows\UserWindows\ProfileUserWindow.xaml;Windows\UserWindows\SelectedLessonWindow.xaml;
 
-True
+False
 

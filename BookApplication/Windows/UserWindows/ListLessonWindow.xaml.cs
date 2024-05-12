@@ -76,6 +76,15 @@ namespace BookApplication.Windows.UserWindows
             selectedLessonWindow.Show();
             this.Close();
         }
+        private void BtnProfile_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null) { return; } 
+            var user = button.DataContext as User;
+            ProfileUserWindow profileUserWindow = new ProfileUserWindow(User);
+            profileUserWindow.Show();
+            Close();
+        }
 
         private void BtnTest_Click(object sender, RoutedEventArgs e)
         {
@@ -86,5 +95,6 @@ namespace BookApplication.Windows.UserWindows
         {
             //Process.Start(new ProcessStartInfo("https://www.twitch.tv/sqreendota2") { UseShellExecute = true });
         }
+
     }
 }
