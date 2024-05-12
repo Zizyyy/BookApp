@@ -27,13 +27,13 @@ namespace BookApplication.Windows.AdminWindows
         {
             InitializeComponent();
             TblRole.Text = User.Role.Title + ": ";
-            if(User.MName == null)
+            if (User.MName == "")
             {
-                TblName.Text = $"{User.LName} {User.FName.Substring(1)}";
+                TblName.Text = $"{User.LName} {User.FName.Substring(0, 1)}.";
             }
             else
             {
-                TblName.Text = User.LName + " " + User.FName.Substring(1) +". " + $"{User.MName.Substring(1)}";
+                TblName.Text = $"{User.LName} {User.FName.Substring(0, 1)}. {User.MName.Substring(0, 1)}.";
             }
             GetUserList();
         }
