@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookApplication.Windows.AdminWindows"
         mc:Ignorable="d"
-                   WindowStartupLocation="CenterScreen"
-    WindowStyle="None"
-    ResizeMode="NoResize"
-    AllowsTransparency="True"
-    Background="Transparent"
-    Title="AuthorizationView" Height="650" Width="1200"
-    MouseDown="Window_MouseDown">
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="AuthorizationView" Height="650" Width="1200"
+        MouseDown="Window_MouseDown">
 
     <Border>
         <Border.Background>
             <SolidColorBrush Color="#313338"/>
         </Border.Background>
-
+        
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
@@ -30,6 +30,43 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="25"/>
             </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"> 
+                <Button x:Name="BtnExit"
+                        Height="30"
+                        Width="75"
+                        BorderThickness="0"
+                        Content="Выйти"
+                        Foreground="#FFFFFF"
+                        FontFamily="Whitney Bold"
+                        Cursor="Hand"
+                        Margin="0 0 35 0"
+                        Click="BtnExit_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#313338"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#35373C"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3B3D44"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
 
             <Grid Grid.Row="0" 
               Grid.Column="1">

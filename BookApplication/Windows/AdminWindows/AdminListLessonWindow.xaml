@@ -31,6 +31,43 @@
                 <ColumnDefinition Width="25"/>
             </Grid.ColumnDefinitions>
 
+            <StackPanel Grid.Row="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+                <Button x:Name="BtnExit"
+                        Height="30"
+                        Width="75"
+                        BorderThickness="0"
+                        Content="Выйти"
+                        Foreground="#FFFFFF"
+                        FontFamily="Whitney Bold"
+                        Cursor="Hand"
+                        Margin="0 0 35 0"
+                        Click="BtnExit_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#313338"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#35373C"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3B3D44"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
             <Grid Grid.Row="0" 
               Grid.Column="1">
                 <Button x:Name="BtnClose"

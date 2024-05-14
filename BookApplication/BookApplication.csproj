@@ -231,6 +231,10 @@
     <Resource Include="Assets\Editing.png" />
     <Resource Include="Assets\NoImage.png" />
     <Resource Include="Assets\UserIcon.png" />
+    <Resource Include="Assets\FullScreen.png" />
+    <Resource Include="Assets\MinimizeScreen.png" />
+    <Resource Include="Assets\Pause.png" />
+    <Resource Include="Assets\Play.png" />
     <Content Include="DB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

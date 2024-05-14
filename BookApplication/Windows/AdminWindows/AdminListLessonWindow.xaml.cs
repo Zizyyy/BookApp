@@ -69,6 +69,13 @@ namespace BookApplication.Windows.AdminWindows
             this.Close();
         }
 
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
+            Close();
+        }
+
         private void TbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             GetList();

@@ -68,11 +68,19 @@ namespace BookApplication.Windows.AdminWindows
             this.Close();
         }
 
+        private void BtnExit_Click(object obj, RoutedEventArgs e)
+        {
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
+            Close();
+        }
+
         private void BtnLesson_Click(object sender, RoutedEventArgs e)
         {
             AdminListLessonWindow adminListLessonWindow = new AdminListLessonWindow();
             adminListLessonWindow.Show();
             Close();
         }
+       
     }
 }
