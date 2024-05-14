@@ -1,6 +1,7 @@
-﻿using System;
+﻿using BookApplication.DB;
+using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,22 +14,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using BookApplication.ClassHelper;
-using BookApplication.DB;
-
 namespace BookApplication.Windows.UserWindows
 {
     /// <summary>
-    /// Логика взаимодействия для ListLessonWindow.xaml
+    /// Логика взаимодействия для ListVideoWindow.xaml
     /// </summary>
-    public partial class ListLessonWindow : Window
+    public partial class ListVideoWindow : Window
     {
+
         public static User User;
 
-        public ListLessonWindow()
+        public ListVideoWindow()
         {
             InitializeComponent();
-            TblRole.Text = User.Role.Title +": ";
+
+            TblRole.Text = User.Role.Title + ": ";
             if (User.MName == "")
             {
                 TblName.Text = $"{User.LName} {User.FName.Substring(0, 1)}.";
@@ -37,25 +37,14 @@ namespace BookApplication.Windows.UserWindows
             {
                 TblName.Text = $"{User.LName} {User.FName.Substring(0, 1)}. {User.MName.Substring(0, 1)}.";
             }
-            GetList();
         }
 
-        public static ListLessonWindow Auth(User user)
+        public static ListVideoWindow Auth(User user)
         {
             User = user;
-            return new ListLessonWindow();
+            return new ListVideoWindow();
         }
 
-        private void GetList()
-        {
-            List<Lesson> listLesson = new List<Lesson>();
-            
-            listLesson = EFClass.context.Lesson.ToList();
-
-            listLesson = listLesson.Where(x => x.Title.ToLower().Contains(TbSearch.Text.ToLower())).ToList();
-            
-            LvLesson.ItemsSource = listLesson;
-        }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -68,25 +57,10 @@ namespace BookApplication.Windows.UserWindows
         {
             this.Close();
         }
-
-        private void TbSearch_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            GetList();
-        }
-
-        private void BtnOpen_Click(object sender, RoutedEventArgs e)
-        {
-            var button = sender as Button;
-            if (button == null) { return; }
-            var lesson = button.DataContext as Lesson;
-            SelectedLessonWindow selectedLessonWindow = new SelectedLessonWindow(lesson);
-            selectedLessonWindow.Show();
-            this.Close();
-        }
         private void BtnProfile_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            if (button == null) { return; } 
+            if (button == null) { return; }
             var user = button.DataContext as User;
             ProfileUserWindow profileUserWindow = new ProfileUserWindow(User);
             profileUserWindow.Show();
@@ -98,17 +72,38 @@ namespace BookApplication.Windows.UserWindows
 
         }
 
-        private void BtnVideoLesson_Click(object sender, RoutedEventArgs e)
-        {
-            ListVideoWindow.Auth(User).Show();
-            Close();
-        }
-
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             AuthorizationWindow authorizationWindow = new AuthorizationWindow();
             authorizationWindow.Show();
             Close();
         }
+
+        private void BtnLesson_Click(object sender, RoutedEventArgs e)
+        {
+            ListLessonWindow listLessonWindow = new ListLessonWindow();
+            listLessonWindow.Show();
+            Close();
+        }
+
+        private void BtnOpenVideo_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                if (openFileDialog.FileName.EndsWith("mp4"))
+                {
+                    OpenedVideoWindow.Video(openFileDialog.FileName).Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Поддерживается только mp4 формат.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+            }
+        }
     }
 }
+
+//Process.Start(new ProcessStartInfo("https://www.twitch.tv/sqreendota2") { UseShellExecute = true });

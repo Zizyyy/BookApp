@@ -41,3 +41,7 @@ D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\ProfileUs
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\ProfileUserWindow.baml
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\UserListWindow.g.cs
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\UserListWindow.baml
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\OpenedVideoWindow.g.cs
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\ListVideoWindow.g.cs
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\ListVideoWindow.baml
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\OpenedVideoWindow.baml
