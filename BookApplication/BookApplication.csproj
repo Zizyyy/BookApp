@@ -93,6 +93,9 @@
     <Compile Include="Windows\UserWindows\ListLessonWindow.xaml.cs">
       <DependentUpon>ListLessonWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\UserWindows\ListVidioWindow.xaml.cs">
+      <DependentUpon>ListVidioWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\UserWindows\ProfileUserWindow.xaml.cs">
       <DependentUpon>ProfileUserWindow.xaml</DependentUpon>
     </Compile>
@@ -171,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\UserWindows\ListLessonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UserWindows\ListVidioWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
