@@ -49,6 +49,8 @@ namespace BookApplication.Windows.UserWindows
 
         private void BtnClose_MouseDown(object sender, RoutedEventArgs e)
         {
+            ListVideoWindow listVideoWindow = new ListVideoWindow();
+            listVideoWindow.Show();
             this.Close();
         }
 
@@ -79,6 +81,13 @@ namespace BookApplication.Windows.UserWindows
         private void BtnFull_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Maximized;
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            ListVideoWindow listVideoWindow = new ListVideoWindow();
+            listVideoWindow.Show();
+            this.Close();
         }
     }
 }

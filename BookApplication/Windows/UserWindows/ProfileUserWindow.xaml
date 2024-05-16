@@ -62,6 +62,39 @@
                 </Button>
             </Grid>
 
+            <Button x:Name="BtnBack"
+                    Height="30"
+                    Width="75"
+                    BorderThickness="0"
+                    Content="Выйти"
+                    Foreground="#FFFFFF"
+                    FontFamily="Whitney Bold"
+                    Cursor="Hand"
+                    HorizontalAlignment="Left"
+                    Click="BtnBack_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#313338"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#35373C"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#3B3D44"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                 HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
             <StackPanel Orientation ="Horizontal"
                         Height="Auto"
                         Grid.Row="1"

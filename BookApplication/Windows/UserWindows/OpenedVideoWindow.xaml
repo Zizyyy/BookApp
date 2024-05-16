@@ -251,6 +251,41 @@
                     <Image Source="/Assets/FullScreen.png"/>
                 </Button>
             </StackPanel>
+            <Button x:Name="BtnBack"
+                    Height="30"
+                    Width="100"
+                    BorderThickness="0"
+                    Content="Назад"
+                    Foreground="#FFFFFF"
+                    FontFamily="Whitney Bold"
+                    Cursor="Hand"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Grid.Row="3"
+                    Margin="10 0 0 0"
+                    Click="BtnBack_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#5865F2"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4752C4"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#3C45A5"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
             <TextBlock Grid.Row="4" x:Name="TblNma"/>
         </Grid>
     </Border>

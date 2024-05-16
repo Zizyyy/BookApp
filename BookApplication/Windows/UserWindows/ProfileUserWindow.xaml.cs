@@ -80,5 +80,12 @@ namespace BookApplication.Windows.UserWindows
             listLessonWindow.Show();
             Close();
         }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            ListLessonWindow listLessonWindow = new ListLessonWindow();
+            listLessonWindow.Show();
+            Close();
+        }
     }
 }
