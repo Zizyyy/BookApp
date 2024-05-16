@@ -31,6 +31,7 @@ namespace BookApplication.DB
         public virtual DbSet<Quiz> Quiz { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Tutorial> Tutorial { get; set; }
         public virtual DbSet<User> User { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

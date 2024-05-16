@@ -36,6 +36,17 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <EntityType Name="Tutorial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="DateOfAddition" Type="datetime" Nullable="false" />
+    <Property Name="UrlPath" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="LessonId" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
@@ -71,6 +82,18 @@
       </Principal>
       <Dependent Role="Quiz">
         <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tutorial_Lesson">
+    <End Role="Lesson" Type="Self.Lesson" Multiplicity="1" />
+    <End Role="Tutorial" Type="Self.Tutorial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lesson">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tutorial">
+        <PropertyRef Name="LessonId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -122,6 +145,7 @@
     <EntitySet Name="Quiz" EntityType="Self.Quiz" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tutorial" EntityType="Self.Tutorial" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Quiz_Lesson" Association="Self.FK_Quiz_Lesson">
       <End Role="Lesson" EntitySet="Lesson" />
@@ -130,6 +154,10 @@
     <AssociationSet Name="FK_Quiz_User" Association="Self.FK_Quiz_User">
       <End Role="User" EntitySet="User" />
       <End Role="Quiz" EntitySet="Quiz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tutorial_Lesson" Association="Self.FK_Tutorial_Lesson">
+      <End Role="Lesson" EntitySet="Lesson" />
+      <End Role="Tutorial" EntitySet="Tutorial" />
     </AssociationSet>
     <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
       <End Role="Role" EntitySet="Role" />

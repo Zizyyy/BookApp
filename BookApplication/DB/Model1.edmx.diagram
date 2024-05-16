@@ -8,9 +8,11 @@
         <EntityTypeShape EntityType="Model.Lesson" Width="1.5" PointX="3" PointY="5.5" />
         <EntityTypeShape EntityType="Model.Quiz" Width="1.5" PointX="5.25" PointY="1.375" />
         <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="0.75" PointY="1.75" />
-        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.Tutorial" Width="1.5" PointX="5.25" PointY="5.375" />
         <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="3" PointY="1" />
         <AssociationConnector Association="Model.FK_Quiz_Lesson" />
+        <AssociationConnector Association="Model.FK_Tutorial_Lesson" />
         <AssociationConnector Association="Model.FK_Quiz_User" />
         <AssociationConnector Association="Model.FK_User_Role" />
       </Diagram>

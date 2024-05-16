@@ -1,7 +1,9 @@
-﻿using BookApplication.DB;
+﻿using BookApplication.ClassHelper;
+using BookApplication.DB;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,7 @@ namespace BookApplication.Windows.UserWindows
     /// </summary>
     public partial class ListVideoWindow : Window
     {
+        private List<Tutorial> listTutorial = new List<Tutorial>();
 
         public static User User;
 
@@ -37,6 +40,8 @@ namespace BookApplication.Windows.UserWindows
             {
                 TblName.Text = $"{User.LName} {User.FName.Substring(0, 1)}. {User.MName.Substring(0, 1)}.";
             }
+
+            GetTutorialList();
         }
 
         public static ListVideoWindow Auth(User user)
@@ -65,6 +70,15 @@ namespace BookApplication.Windows.UserWindows
             ProfileUserWindow profileUserWindow = new ProfileUserWindow(User);
             profileUserWindow.Show();
             Close();
+        }
+
+        private void GetTutorialList()
+        {
+            listTutorial = EFClass.context.Tutorial.ToList();
+
+            listTutorial = listTutorial.Where(x => x.Title.ToLower().Contains(TbSearch.Text.ToLower())).ToList();
+
+            LvTutorial.ItemsSource = listTutorial;
         }
 
         private void BtnTest_Click(object sender, RoutedEventArgs e)
@@ -102,6 +116,16 @@ namespace BookApplication.Windows.UserWindows
                     return;
                 }
             }
+        }
+
+        private void TbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            GetTutorialList();
+        }
+
+        private void BtnOpen_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(EFClass.context.Tutorial.ToList().FirstOrDefault().UrlPath) { UseShellExecute = true });
         }
     }
 }

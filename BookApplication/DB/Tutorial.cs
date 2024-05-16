@@ -12,23 +12,15 @@ namespace BookApplication.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Lesson
+    public partial class Tutorial
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Lesson()
-        {
-            this.Quiz = new HashSet<Quiz>();
-            this.Tutorial = new HashSet<Tutorial>();
-        }
-    
         public int ID { get; set; }
         public string Title { get; set; }
-        public string ContentLesson { get; set; }
-        public string PhotoPath { get; set; }
+        public string Description { get; set; }
+        public System.DateTime DateOfAddition { get; set; }
+        public string UrlPath { get; set; }
+        public int LessonId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Quiz> Quiz { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tutorial> Tutorial { get; set; }
+        public virtual Lesson Lesson { get; set; }
     }
 }

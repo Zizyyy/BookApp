@@ -20,6 +20,7 @@ namespace BookApplication.Windows.UserWindows
     public partial class OpenedVideoWindow : Window
     {
         private static string PathVideo;
+        private TimeSpan savedPosition;
 
         public OpenedVideoWindow()
         {
@@ -65,11 +66,13 @@ namespace BookApplication.Windows.UserWindows
 
         private void BtnPlay_Click(object sender, RoutedEventArgs e)
         {
+            MediaEl.Position = savedPosition;
             MediaEl.Play();
         }
 
         private void BtnPause_Click(object sender, RoutedEventArgs e)
         {
+            savedPosition = MediaEl.Position;
             MediaEl.Stop();
         }
 

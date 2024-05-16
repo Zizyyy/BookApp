@@ -41,6 +41,17 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="Tutorial">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="DateOfAddition" Type="datetime" Nullable="false" />
+          <Property Name="UrlPath" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="LessonId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -76,6 +87,18 @@
             </Principal>
             <Dependent Role="Quiz">
               <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tutorial_Lesson">
+          <End Role="Lesson" Type="Self.Lesson" Multiplicity="1" />
+          <End Role="Tutorial" Type="Self.Tutorial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lesson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tutorial">
+              <PropertyRef Name="LessonId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -127,6 +150,7 @@
           <EntitySet Name="Quiz" EntityType="Self.Quiz" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tutorial" EntityType="Self.Tutorial" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Quiz_Lesson" Association="Self.FK_Quiz_Lesson">
             <End Role="Lesson" EntitySet="Lesson" />
@@ -135,6 +159,10 @@
           <AssociationSet Name="FK_Quiz_User" Association="Self.FK_Quiz_User">
             <End Role="User" EntitySet="User" />
             <End Role="Quiz" EntitySet="Quiz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tutorial_Lesson" Association="Self.FK_Tutorial_Lesson">
+            <End Role="Lesson" EntitySet="Lesson" />
+            <End Role="Tutorial" EntitySet="Tutorial" />
           </AssociationSet>
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
             <End Role="Role" EntitySet="Role" />
@@ -180,10 +208,15 @@
           <EntitySet Name="Quiz" EntityType="Model.Quiz" />
           <EntitySet Name="Role" EntityType="Model.Role" />
           <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagrams" />
+          <EntitySet Name="Tutorial" EntityType="Model.Tutorial" />
           <EntitySet Name="User" EntityType="Model.User" />
           <AssociationSet Name="FK_Quiz_Lesson" Association="Model.FK_Quiz_Lesson">
             <End Role="Lesson" EntitySet="Lesson" />
             <End Role="Quiz" EntitySet="Quiz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tutorial_Lesson" Association="Model.FK_Tutorial_Lesson">
+            <End Role="Lesson" EntitySet="Lesson" />
+            <End Role="Tutorial" EntitySet="Tutorial" />
           </AssociationSet>
           <AssociationSet Name="FK_Quiz_User" Association="Model.FK_Quiz_User">
             <End Role="User" EntitySet="User" />
@@ -214,6 +247,7 @@
           <Property Name="ContentLesson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PhotoPath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Quiz" Relationship="Model.FK_Quiz_Lesson" FromRole="Lesson" ToRole="Quiz" />
+          <NavigationProperty Name="Tutorial" Relationship="Model.FK_Tutorial_Lesson" FromRole="Lesson" ToRole="Tutorial" />
         </EntityType>
         <EntityType Name="Quiz">
           <Key>
@@ -245,6 +279,18 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="Tutorial">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfAddition" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UrlPath" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="LessonId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Lesson" Relationship="Model.FK_Tutorial_Lesson" FromRole="Tutorial" ToRole="Lesson" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -270,6 +316,18 @@
             </Principal>
             <Dependent Role="Quiz">
               <PropertyRef Name="LessonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tutorial_Lesson">
+          <End Type="Model.Lesson" Role="Lesson" Multiplicity="1" />
+          <End Type="Model.Tutorial" Role="Tutorial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lesson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tutorial">
+              <PropertyRef Name="LessonId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -364,6 +422,18 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tutorial">
+            <EntityTypeMapping TypeName="Model.Tutorial">
+              <MappingFragment StoreEntitySet="Tutorial">
+                <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+                <ScalarProperty Name="UrlPath" ColumnName="UrlPath" />
+                <ScalarProperty Name="DateOfAddition" ColumnName="DateOfAddition" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

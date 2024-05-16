@@ -72,6 +72,9 @@
     <Compile Include="DB\Quiz.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\Tutorial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AdminWindows\AddEditLessonWindow.xaml.cs">
       <DependentUpon>AddEditLessonWindow.xaml</DependentUpon>
     </Compile>

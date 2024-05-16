@@ -35,10 +35,15 @@
     <EntitySet Name="Quiz" EntityType="Model.Quiz" />
     <EntitySet Name="Role" EntityType="Model.Role" />
     <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagrams" />
+    <EntitySet Name="Tutorial" EntityType="Model.Tutorial" />
     <EntitySet Name="User" EntityType="Model.User" />
     <AssociationSet Name="FK_Quiz_Lesson" Association="Model.FK_Quiz_Lesson">
       <End Role="Lesson" EntitySet="Lesson" />
       <End Role="Quiz" EntitySet="Quiz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tutorial_Lesson" Association="Model.FK_Tutorial_Lesson">
+      <End Role="Lesson" EntitySet="Lesson" />
+      <End Role="Tutorial" EntitySet="Tutorial" />
     </AssociationSet>
     <AssociationSet Name="FK_Quiz_User" Association="Model.FK_Quiz_User">
       <End Role="User" EntitySet="User" />
@@ -69,6 +74,7 @@
     <Property Name="ContentLesson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="PhotoPath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Quiz" Relationship="Model.FK_Quiz_Lesson" FromRole="Lesson" ToRole="Quiz" />
+    <NavigationProperty Name="Tutorial" Relationship="Model.FK_Tutorial_Lesson" FromRole="Lesson" ToRole="Tutorial" />
   </EntityType>
   <EntityType Name="Quiz">
     <Key>
@@ -100,6 +106,18 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
+  <EntityType Name="Tutorial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfAddition" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UrlPath" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="LessonId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Lesson" Relationship="Model.FK_Tutorial_Lesson" FromRole="Tutorial" ToRole="Lesson" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
@@ -125,6 +143,18 @@
       </Principal>
       <Dependent Role="Quiz">
         <PropertyRef Name="LessonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tutorial_Lesson">
+    <End Type="Model.Lesson" Role="Lesson" Multiplicity="1" />
+    <End Type="Model.Tutorial" Role="Tutorial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lesson">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tutorial">
+        <PropertyRef Name="LessonId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
