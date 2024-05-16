@@ -129,5 +129,3 @@ namespace BookApplication.Windows.UserWindows
         }
     }
 }
-
-//Process.Start(new ProcessStartInfo("https://www.twitch.tv/sqreendota2") { UseShellExecute = true });
