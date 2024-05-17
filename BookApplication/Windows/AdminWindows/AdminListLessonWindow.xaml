@@ -205,14 +205,15 @@
                 </Button>
 
                 <Button x:Name="BtnVideoLesson"
-                    Height="45"
-                    Width="200"
-                    BorderThickness="0"
-                    Content="Видеоуроки"
-                    Foreground="#FFFFFF"
-                    FontFamily="Whitney Bold"
-                    Cursor="Hand"
-                    Margin="0 0 15 0">
+                        Height="45"
+                        Width="200"
+                        BorderThickness="0"
+                        Content="Видеоуроки"
+                        Foreground="#FFFFFF"
+                        FontFamily="Whitney Bold"
+                        Cursor="Hand"
+                        Margin="0 0 15 0"
+                        Click="BtnVideoLesson_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#5865F2"/>

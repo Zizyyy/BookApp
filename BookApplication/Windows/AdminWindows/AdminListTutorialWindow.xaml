@@ -1,4 +1,4 @@
-﻿<Window x:Class="BookApplication.Windows.AdminWindows.UserListWindow"
+﻿<Window x:Class="BookApplication.Windows.AdminWindows.AdminListTutorialWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -10,14 +10,14 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent"
-        Title="AuthorizationView" Height="650" Width="1200"
+        Title="AdminListTutorial" Height="650" Width="1200"
         MouseDown="Window_MouseDown">
 
     <Border>
         <Border.Background>
             <SolidColorBrush Color="#313338"/>
         </Border.Background>
-        
+
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
@@ -33,7 +33,7 @@
 
             <StackPanel Grid.Row="0"
                         HorizontalAlignment="Left"
-                        VerticalAlignment="Center"> 
+                        VerticalAlignment="Center">
                 <Button x:Name="BtnExit"
                         Height="30"
                         Width="75"
@@ -61,7 +61,7 @@
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}">
                                 <ContentPresenter VerticalAlignment="Center"
-                                     HorizontalAlignment="Center"/>
+                         HorizontalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
@@ -69,7 +69,7 @@
             </StackPanel>
 
             <Grid Grid.Row="0" 
-              Grid.Column="1">
+                  Grid.Column="1">
                 <Button x:Name="BtnClose"
                         Height="24"
                         Width="25"
@@ -95,7 +95,7 @@
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}">
                                 <ContentPresenter VerticalAlignment="Center"
-                                      HorizontalAlignment="Center"/>
+                          HorizontalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
@@ -114,7 +114,8 @@
                         Foreground="#FFFFFF"
                         FontFamily="Whitney Bold"
                         Cursor="Hand"
-                        Margin="0 0 15 0">
+                        Margin="0 0 15 0"
+                        Click="BtnUserList_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#5865F2"/>
@@ -165,7 +166,7 @@
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}">
                                 <ContentPresenter VerticalAlignment="Center"
-                                                HorizontalAlignment="Center"/>
+                                                  HorizontalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
@@ -179,7 +180,8 @@
                         Foreground="#FFFFFF"
                         FontFamily="Whitney Bold"
                         Cursor="Hand"
-                        Margin="0 0 15 0">  
+                        Margin="0 0 15 0"
+                        Click="BtnTest_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#5865F2"/>
@@ -211,8 +213,7 @@
                         Foreground="#FFFFFF"
                         FontFamily="Whitney Bold"
                         Cursor="Hand"
-                        Margin="0 0 15 0"
-                        Click="BtnVideoLesson_Click">
+                        Margin="0 0 15 0">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#5865F2"/>
@@ -230,7 +231,7 @@
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}">
                                 <ContentPresenter VerticalAlignment="Center"
-                                                HorizontalAlignment="Center"/>
+                  HorizontalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
@@ -248,15 +249,13 @@
                            Foreground="#ffffff"/>
             </StackPanel>
 
-            <ListView x:Name="LvUser"
+            <ListView x:Name="LvTutorial"
                       Grid.Row="2"
-                      Grid.ColumnSpan="2"
                       Background="#1E1F22"
-                      Width="1180"
-                      BorderThickness="0"
                       d:ItemsSource="{d:SampleData ItemCount=5}"
                       ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                      Margin="5">   
+                      BorderThickness="0"
+                      Margin="25 0 0 0">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel/>
@@ -267,108 +266,115 @@
                         <Border CornerRadius="3"
                                 BorderThickness="5"
                                 BorderBrush="#313338"
-                                Width="350"
-                                Height="370"
+                                Width="1100"
+                                Height="100"
                                 Margin="10 5 0 25">
                             <ScrollViewer>
-                                <StackPanel HorizontalAlignment="Left"
-                                            Margin="10 5 0 0">
-                                    <TextBlock Text="АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ"
-                                               Foreground="#949BA4"
-                                               FontSize="12"
-                                               FontFamily="Whitney Bold"
-                                               Margin="0 0 0 5"/>
-                                    <TextBlock x:Name="TblEmail"
-                                               Text="{Binding Email}"
-                                               Width="300"
-                                               TextWrapping="Wrap"
-                                               Height="40"
-                                               Background="#26282C"
-                                               Foreground="#BDC0C3"
-                                               Padding="10 10 0 0"
-                                               FontFamily="Whitney Medium"
-                                               FontSize="16"
-                                               Margin="0 0 0 10">
-                                    </TextBlock>
-
-                                    <TextBlock Text="ФАМИЛИЯ"
-                                               Foreground="#949BA4"
-                                               FontSize="12"
-                                               FontFamily="Whitney Bold"
-                                               Margin="0 0 0 5"/>
-                                    <TextBlock x:Name="TblLName"
-                                               Text="{Binding LName}"
-                                               Width="300"
-                                               TextWrapping="Wrap"
-                                               Height="40"
-                                               Background="#26282C"
-                                               Foreground="#BDC0C3"
-                                               Padding="10 10 0 0"
-                                               FontFamily="Whitney Medium"
-                                               FontSize="16"
-                                               Margin="0 0 0 10">
-                                    </TextBlock>
-
-                                    <TextBlock Text="ИМЯ"
-                                               Foreground="#949BA4"
-                                               FontSize="12"
-                                               FontFamily="Whitney Bold"
-                                               Margin="0 0 0 5"/>
-                                    <TextBlock x:Name="TblFName"
-                                               Text="{Binding FName}"
-                                               Width="300"
-                                               TextWrapping="Wrap"
-                                               Height="40"
-                                               Background="#26282C"
-                                               Foreground="#BDC0C3"
-                                               Padding="10 10 0 0"
-                                               FontFamily="Whitney Medium"
-                                               FontSize="16"
-                                               Margin="0 0 0 10">
-                                    </TextBlock>
-
-                                    <TextBlock Text="ОТЧЕСТВО"
-                                               Foreground="#949BA4"
-                                               FontSize="12"
-                                               FontFamily="Whitney Bold"
-                                               Margin="0 0 0 5"/>
-                                    <TextBlock x:Name="TblMName"
-                                               Text="{Binding MName}"
-                                               Width="300"
-                                               TextWrapping="Wrap"
-                                               Height="40"
-                                               Background="#26282C"
-                                               Foreground="#BDC0C3"
-                                               Padding="10 10 0 0"
-                                               FontFamily="Whitney"
-                                               FontSize="16"
-                                               Margin="0 0 0 10">
-                                    </TextBlock>
-
-                                    <TextBlock Text="ДАТА РОЖДЕНИЯ"
-                                               Foreground="#949BA4"
-                                               FontSize="12"
-                                               FontFamily="Whitney Bold"
-                                               Margin="0 0 0 5"/>
-                                    <TextBlock x:Name="TblDateOfBirth"
-                                               Text="{Binding DateOfBirth}"
-                                               Width="300"
-                                               TextWrapping="Wrap"
-                                               Height="40"
-                                               Background="#26282C"
-                                               Foreground="#BDC0C3"
-                                               Padding="10 10 0 0"
-                                               FontFamily="Whitney Medium"
-                                               FontSize="16"
-                                               Margin="0 0 0 10">
-                                    </TextBlock>
+                                <StackPanel Background="#2B2D31">
+                                    <TextBlock Text="{Binding Title}"
+                                                   FontSize="22"
+                                                   FontFamily="Whitney Bold"
+                                                   Foreground="#949BA4"
+                                                   HorizontalAlignment="Left"
+                                                   TextWrapping="Wrap"
+                                                   Margin="5 0 0 0"/>
+                                    <Button x:Name="BtnOpen"
+                                                 Height="35"
+                                                 Width="100"
+                                                 BorderThickness="0"
+                                                 Content="Открыть"
+                                                 Foreground="#FFFFFF"
+                                                 FontFamily="Whitney Bold"
+                                                 Cursor="Hand"
+                                            Click="BtnOpen_Click">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Background" Value="#5865F2"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#4752C4"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsPressed" Value="True">
+                                                        <Setter Property="Background" Value="#3C45A5"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter VerticalAlignment="Center"
+                                                   HorizontalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
                                 </StackPanel>
                             </ScrollViewer>
                         </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <StackPanel Grid.Row="3"
+                        HorizontalAlignment="Left"
+                        Margin="10 0 0 0">
+                <TextBlock Text="ПОИСК"
+                           Foreground="#949BA4"
+                           FontSize="12"
+                           FontFamily="Whitney Bold"
+                           Margin="0 0 0 0"/>
+
+                <TextBox x:Name="TbSearch"
+                         Width="370"
+                         Height="40"
+                         Background="#1E1F22"
+                         BorderThickness="0"
+                         Foreground="#BDC0C3"
+                         Padding="10 10 0 0"
+                         FontFamily="Whitney Medium"
+                         FontSize="16" TextChanged="TbSearch_TextChanged"
+                         >
+                </TextBox>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="3"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Margin="0 0 0 0">
+                <Button x:Name="BtnOpenVideo"
+                        Height="45"
+                        Width="150"
+                        BorderThickness="0"
+                        Content="Открыть видео"
+                        Foreground="#FFFFFF"
+                        FontFamily="Whitney Bold"
+                        Cursor="Hand"
+                        Click="BtnOpenVideo_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#5865F2"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#4752C4"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3C45A5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
         </Grid>
     </Border>
 </Window>
-

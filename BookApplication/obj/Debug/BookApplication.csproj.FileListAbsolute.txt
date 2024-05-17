@@ -45,3 +45,7 @@ D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\OpenedVid
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\ListVideoWindow.g.cs
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\ListVideoWindow.baml
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\UserWindows\OpenedVideoWindow.baml
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminListTutorialWindow.g.cs
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminListTutorialWindow.baml
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminOpenedVideoWindow.g.cs
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminOpenedVideoWindow.baml

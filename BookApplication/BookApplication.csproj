@@ -81,6 +81,12 @@
     <Compile Include="Windows\AdminWindows\AdminListLessonWindow.xaml.cs">
       <DependentUpon>AdminListLessonWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AdminWindows\AdminListTutorialWindow.xaml.cs">
+      <DependentUpon>AdminListTutorialWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdminWindows\AdminOpenedVideoWindow.xaml.cs">
+      <DependentUpon>AdminOpenedVideoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AdminWindows\AdminSelectedLessonWindow.xaml.cs">
       <DependentUpon>AdminSelectedLessonWindow.xaml</DependentUpon>
     </Compile>
@@ -160,6 +166,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AdminWindows\AdminListLessonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminWindows\AdminListTutorialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminWindows\AdminOpenedVideoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

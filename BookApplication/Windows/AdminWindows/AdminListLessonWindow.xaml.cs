@@ -118,5 +118,11 @@ namespace BookApplication.Windows.AdminWindows
             UserListWindow.Auth(User).Show();
             Close();
         }
+
+        private void BtnVideoLesson_Click(object sender, RoutedEventArgs e)
+        {
+            AdminListTutorialWindow.Auth(User).Show();
+            Close();
+        }
     }
 }
