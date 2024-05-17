@@ -49,3 +49,5 @@ D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminLis
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminListTutorialWindow.baml
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminOpenedVideoWindow.g.cs
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminOpenedVideoWindow.baml
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AddEditListTutorialWindow.g.cs
+D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AddEditListTutorialWindow.baml

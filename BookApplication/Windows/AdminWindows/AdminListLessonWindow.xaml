@@ -370,58 +370,58 @@
                         Orientation="Vertical"
                         HorizontalAlignment="Left"
                         Margin="10 0 0 0">
-                <TextBlock Text="ПОИСК"
-                       Foreground="#949BA4"
-                       FontSize="12"
-                       FontFamily="Whitney Bold"
-                       Margin="0 0 0 0"/>
-                <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Left">
+                    <TextBlock Text="ПОИСК"
+                           Foreground="#949BA4"
+                           FontSize="12"
+                           FontFamily="Whitney Bold"
+                           Margin="0 0 0 0"/>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left">
                     
-                <TextBox x:Name="TbSearch"
-                     Width="370"
-                     Height="40"
-                     Background="#1E1F22"
-                     BorderThickness="0"
-                     Foreground="#BDC0C3"
-                     Padding="10 10 0 0"
-                     FontFamily="Whitney Medium"
-                     FontSize="16" TextChanged="TbSearch_TextChanged">
-                </TextBox>
+                    <TextBox x:Name="TbSearch"
+                         Width="370"
+                         Height="40"
+                         Background="#1E1F22"
+                         BorderThickness="0"
+                         Foreground="#BDC0C3"
+                         Padding="10 10 0 0"
+                         FontFamily="Whitney Medium"
+                         FontSize="16" TextChanged="TbSearch_TextChanged">
+                    </TextBox>
 
-                <Button x:Name="BtnAdd"
-                        Height="35"
-                        Width="100"
-                        BorderThickness="0"
-                        Content="Добавить"
-                        Foreground="#FFFFFF"
-                        FontFamily="Whitney Bold"
-                        HorizontalAlignment="Center"
-                        Cursor="Hand"
-                        Margin="10 0 0 0"
-                        Click="BtnAdd_Click">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Background" Value="#5865F2"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#4752C4"/>
-                                </Trigger>
-                                <Trigger Property="IsPressed" Value="True">
-                                    <Setter Property="Background" Value="#3C45A5"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}">
-                                <ContentPresenter VerticalAlignment="Center"
-                              HorizontalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
+                    <Button x:Name="BtnAdd"
+                            Height="35"
+                            Width="100"
+                            BorderThickness="0"
+                            Content="Добавить"
+                            Foreground="#FFFFFF"
+                            FontFamily="Whitney Bold"
+                            HorizontalAlignment="Center"
+                            Cursor="Hand"
+                            Margin="10 0 0 0"
+                            Click="BtnAdd_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#5865F2"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#4752C4"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter Property="Background" Value="#3C45A5"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </StackPanel>
             </StackPanel>
         </Grid>

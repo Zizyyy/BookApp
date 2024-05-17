@@ -78,6 +78,9 @@
     <Compile Include="Windows\AdminWindows\AddEditLessonWindow.xaml.cs">
       <DependentUpon>AddEditLessonWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AdminWindows\AddEditListTutorialWindow.xaml.cs">
+      <DependentUpon>AddEditListTutorialWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AdminWindows\AdminListLessonWindow.xaml.cs">
       <DependentUpon>AdminListLessonWindow.xaml</DependentUpon>
     </Compile>
@@ -162,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AdminWindows\AddEditLessonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdminWindows\AddEditListTutorialWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

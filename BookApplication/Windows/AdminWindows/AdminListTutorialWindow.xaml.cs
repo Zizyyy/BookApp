@@ -124,5 +124,22 @@ namespace BookApplication.Windows.AdminWindows
             AdminListLessonWindow.Auth(User).Show();
             Close();
         }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditListTutorialWindow addEditListTutorial = new AddEditListTutorialWindow();
+            addEditListTutorial.Show();
+            Close();
+        }
+
+        private void BtnEditing_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null) { return; }
+            var listTutorial = button.DataContext as Tutorial;
+            AddEditListTutorialWindow addEditListTutorial = new AddEditListTutorialWindow(listTutorial);
+            addEditListTutorial.Show();
+            Close();
+        }
     }
 }
