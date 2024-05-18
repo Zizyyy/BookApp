@@ -22,9 +22,19 @@ namespace BookApplication.Windows
     /// </summary>
     public partial class RegistrationWindow : Window
     {
+        List<string> listGender = new List<string>
+        {
+            "Выберете",
+            "Мужской",
+            "Женский"
+        };
+
         public RegistrationWindow()
         {
             InitializeComponent();
+
+            CbGender.ItemsSource = listGender;
+            CbGender.SelectedIndex = 0;
         }
         
         private void BtnSignUp_Click(object sender, RoutedEventArgs e)
@@ -35,6 +45,37 @@ namespace BookApplication.Windows
                 TbEmail.Text = "";
                 return;
             }
+            
+            if (string.IsNullOrWhiteSpace(TbFName.Text))
+            {
+                TblErrorMaessage.Text = "ОДНО ИЛИ НЕСКОЛЬКО ПОЛЕЙ НЕ ЗАПОЛНЕНЫ";
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TbLName.Text))
+            {
+                TblErrorMaessage.Text = "ОДНО ИЛИ НЕСКОЛЬКО ПОЛЕЙ НЕ ЗАПОЛНЕНЫ";
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TbMName.Text))
+            {
+                TblErrorMaessage.Text = "ОДНО ИЛИ НЕСКОЛЬКО ПОЛЕЙ НЕ ЗАПОЛНЕНЫ";
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(PbPassword.Password))
+            {
+                TblErrorMaessage.Text = "ОДНО ИЛИ НЕСКОЛЬКО ПОЛЕЙ НЕ ЗАПОЛНЕНЫ";
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(DpDateOfBirth.Text))
+            {
+                TblErrorMaessage.Text = "ОДНО ИЛИ НЕСКОЛЬКО ПОЛЕЙ НЕ ЗАПОЛНЕНЫ";
+                return;
+            }
+
             User user = new User();
 
             user.Email = TbEmail.Text;
@@ -43,12 +84,29 @@ namespace BookApplication.Windows
             user.MName = TbMName.Text;
             user.Password = PbPassword.Password;
             user.DateOfBirth = DateTime.Parse(DpDateOfBirth.Text);
+            switch(CbGender.SelectedIndex)
+            {
+                case 1:
+                    user.GenderID = 1;
+                    break;
+                case 2:
+                    user.GenderID = 2;
+                    break;
+                default:
+                    MessageBox.Show("Необходимо выбрать пол", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+
+            }
+            
             user.DateOfRegistration = DateTime.Now;
             user.RoleID = 1;
 
             EFClass.context.User.Add(user);
             EFClass.context.SaveChanges();
             MessageBox.Show("Вы успешно зарегистрировались");
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
+            Close();
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {

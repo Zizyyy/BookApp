@@ -51,3 +51,4 @@ D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminOpe
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AdminOpenedVideoWindow.baml
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AddEditListTutorialWindow.g.cs
 D:\Works\BookApplication\BookApplication\obj\Debug\Windows\AdminWindows\AddEditListTutorialWindow.baml
+D:\Works\BookApplication\BookApplication\obj\Debug\Resources\ComboBoxStyle.baml

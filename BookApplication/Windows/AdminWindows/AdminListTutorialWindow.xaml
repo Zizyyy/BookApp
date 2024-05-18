@@ -314,7 +314,7 @@
                                             </Button.Template>
                                         </Button>
 
-                                        <Button x:Name="BtnEditing"
+                                        <!--<Button x:Name="BtnEditing"
                                                 Height="24"
                                                 Width="24"
                                                 Cursor="Hand"
@@ -341,7 +341,7 @@
                                                 </ControlTemplate>
                                             </Button.Template>
                                             <Image Source="/Assets/Editing.png"/>
-                                        </Button>
+                                        </Button>-->
                                     </StackPanel>
                                 </StackPanel>
                             </ScrollViewer>

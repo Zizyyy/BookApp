@@ -150,7 +150,15 @@
                                Margin="5 0 0 0"/>
 
                 </StackPanel>
-                <ComboBox x:Name="CbListLesson"/>
+                <ComboBox x:Name="CbListLesson"
+                          Style="{DynamicResource ComboBoxStyle}"
+                          Width="400"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Center"
+                          Height="35"
+                          Foreground="#949BA4"
+                          FontFamily="Whitney Medium"
+                          FontSize="16"/>
             </StackPanel>
 
             <StackPanel Grid.Row="3"

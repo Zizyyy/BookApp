@@ -31,12 +31,17 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Gender" EntityType="Model.Gender" />
     <EntitySet Name="Lesson" EntityType="Model.Lesson" />
     <EntitySet Name="Quiz" EntityType="Model.Quiz" />
     <EntitySet Name="Role" EntityType="Model.Role" />
     <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagrams" />
     <EntitySet Name="Tutorial" EntityType="Model.Tutorial" />
     <EntitySet Name="User" EntityType="Model.User" />
+    <AssociationSet Name="FK_User_Gender" Association="Model.FK_User_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
     <AssociationSet Name="FK_Quiz_Lesson" Association="Model.FK_Quiz_Lesson">
       <End Role="Lesson" EntitySet="Lesson" />
       <End Role="Quiz" EntitySet="Quiz" />
@@ -65,6 +70,14 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="GenderName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Model.FK_User_Gender" FromRole="Gender" ToRole="User" />
+  </EntityType>
   <EntityType Name="Lesson">
     <Key>
       <PropertyRef Name="ID" />
@@ -131,9 +144,23 @@
     <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
     <Property Name="DateOfRegistration" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="GenderID" Type="Int32" />
+    <NavigationProperty Name="Gender" Relationship="Model.FK_User_Gender" FromRole="User" ToRole="Gender" />
     <NavigationProperty Name="Quiz" Relationship="Model.FK_Quiz_User" FromRole="User" ToRole="Quiz" />
     <NavigationProperty Name="Role" Relationship="Model.FK_User_Role" FromRole="User" ToRole="Role" />
   </EntityType>
+  <Association Name="FK_User_Gender">
+    <End Type="Model.Gender" Role="Gender" Multiplicity="0..1" />
+    <End Type="Model.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="GenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Quiz_Lesson">
     <End Type="Model.Lesson" Role="Lesson" Multiplicity="1" />
     <End Type="Model.Quiz" Role="Quiz" Multiplicity="*" />

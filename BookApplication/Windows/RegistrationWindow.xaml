@@ -194,24 +194,56 @@
                              Margin="0 0 0 25">
                 </PasswordBox>
 
-                <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Left"
-                            Margin="0 0 0 5">
-                    <TextBlock Text="ДАТА РОЖДЕНИЯ"
-                               Foreground="#949BA4"
-                               HorizontalAlignment="Left"
-                               FontSize="12"
-                               FontFamily="Whitney Bold"/>
-                    <TextBlock Text="⚹"
-                               Foreground="#F23F42"
-                               HorizontalAlignment="Left"
-                               FontSize="12"
-                               FontFamily="Whitney Bold"
-                               Margin="5 0 0 0"/>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Left"
+                                    Margin="0 0 0 5">
+                            <TextBlock Text="ДАТА РОЖДЕНИЯ"
+                                       Foreground="#949BA4"
+                                       HorizontalAlignment="Left"
+                                       FontSize="12"
+                                       FontFamily="Whitney Bold"/>
+                            <TextBlock Text="⚹"
+                                       Foreground="#F23F42"
+                                       HorizontalAlignment="Left"
+                                       FontSize="12"
+                                       FontFamily="Whitney Bold"
+                                       Margin="5 0 0 0"/>
+                        </StackPanel>
+                        <DatePicker x:Name="DpDateOfBirth"
+                                    Width="200"
+                                    HorizontalAlignment="Left"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="25 0 0 0">
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Left"
+                                    Margin="0 0 0 5">
+                            <TextBlock Text="ПОЛ"
+                                       Foreground="#949BA4"
+                                       HorizontalAlignment="Left"
+                                       FontSize="12"
+                                       FontFamily="Whitney Bold"/>
+                            <TextBlock Text="⚹"
+                                       Foreground="#F23F42"
+                                       HorizontalAlignment="Left"
+                                       FontSize="12"
+                                       FontFamily="Whitney Bold"
+                                       Margin="5 0 0 0"/>
+                        </StackPanel>
+
+                        <ComboBox Style="{DynamicResource ComboBoxStyle}" x:Name="CbGender"
+                                  Width="145"
+                                  HorizontalAlignment="Right"
+                                  VerticalAlignment="Center"
+                                  Height="25"
+                                  Foreground="#949BA4"
+                                  FontFamily="Whitney Medium"
+                                  FontSize="14">
+                        </ComboBox>
+                    </StackPanel>
                 </StackPanel>
-                <DatePicker x:Name="DpDateOfBirth"
-                            Width="200"
-                            HorizontalAlignment="Left"/>
 
                 <TextBlock x:Name="TblErrorMaessage"
                            Text="{Binding ErrorMessage, UpdateSourceTrigger=PropertyChanged}"
