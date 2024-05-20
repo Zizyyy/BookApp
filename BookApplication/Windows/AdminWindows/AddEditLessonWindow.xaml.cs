@@ -120,7 +120,7 @@ namespace BookApplication.Windows.AdminWindows
 
                 EFClass.context.Lesson.Add(lesson);
                 EFClass.context.SaveChanges();
-                MessageBox.Show("Услуга успешно добавлена", "Добавление", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Урок успешно добавлена", "Добавление", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 AdminListLessonWindow adminListLesson = new AdminListLessonWindow();
                 adminListLesson.Show();

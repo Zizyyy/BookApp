@@ -141,5 +141,21 @@ namespace BookApplication.Windows.AdminWindows
             addEditListTutorial.Show();
             Close();
         }
+
+        private void BtnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+            var lesson = button.DataContext as Lesson;
+            EFClass.context.Lesson.Remove(lesson);
+            EFClass.context.SaveChanges();
+            MessageBox.Show("Урок удален", "Удаление", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            new AdminListTutorialWindow().Show();
+            Close();
+        }
     }
 }
