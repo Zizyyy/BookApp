@@ -113,25 +113,25 @@
                            FontSize="12"
                            Margin="0 0 0 10"/>
 
-                <TextBlock x:Name="TblReset"
-                           Foreground="#00A6F9"
-                           FontSize="12"
-                           Text="Забыли пароль?"
-                           Background="Transparent"
-                           FontFamily="Whitney Medium"
-                           Cursor="Hand"
-                           Margin="0 0 0 25">       
-                    <TextBlock.Style>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="TextDecorations" Value="None"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="TextDecorations" Value="Baseline"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </TextBlock.Style>
-                </TextBlock>
+                <!-- <TextBlock x:Name="TblReset" -->
+                <!--            Foreground="#00A6F9" -->
+                <!--            FontSize="12" -->
+                <!--            Text="Забыли пароль?" -->
+                <!--            Background="Transparent" -->
+                <!--            FontFamily="Whitney Medium" -->
+                <!--            Cursor="Hand" -->
+                <!--            Margin="0 0 0 25">        -->
+                <!--     <TextBlock.Style> -->
+                <!--         <Style TargetType="TextBlock"> -->
+                <!--             <Setter Property="TextDecorations" Value="None"/> -->
+                <!--             <Style.Triggers> -->
+                <!--                 <Trigger Property="IsMouseOver" Value="True"> -->
+                <!--                     <Setter Property="TextDecorations" Value="Baseline"/> -->
+                <!--                 </Trigger> -->
+                <!--             </Style.Triggers> -->
+                <!--         </Style> -->
+                <!--     </TextBlock.Style> -->
+                <!-- </TextBlock> -->
 
                 <Button x:Name="BtnSignIn"
                     Height="45"
@@ -140,7 +140,7 @@
                     Foreground="#FFFFFF"
                     FontFamily="Whitney Bold"
                     Cursor="Hand"
-                    Margin="0 0 0 15" Click="BtnSignIn_Click">
+                    Margin="0 40 0 15" Click="BtnSignIn_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#5865F2"/>

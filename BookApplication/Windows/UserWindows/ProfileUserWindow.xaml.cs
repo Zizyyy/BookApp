@@ -23,6 +23,14 @@ namespace BookApplication.Windows.UserWindows
     {
         private User changesUser;
 
+        private List<string> listGender = new List<string>()
+        {
+            "Выберете",
+            "Мужской",
+            "Женский"
+        };
+        
+
         //public static User User;
         public ProfileUserWindow()
         {
@@ -38,7 +46,9 @@ namespace BookApplication.Windows.UserWindows
             TbMName.Text = user.MName;
             PbPassword.Password = user.Password;
             DpDateOfBirth.Text = user.DateOfBirth.ToString();
-
+            CbGender.ItemsSource = listGender;
+            CbGender.SelectedIndex = Convert.ToInt32(user.GenderID);
+            
             changesUser = user;
         }
 
@@ -74,6 +84,20 @@ namespace BookApplication.Windows.UserWindows
             changesUser.DateOfBirth = DateTime.Parse(DpDateOfBirth.Text);
             changesUser.DateOfRegistration = DateTime.Now;
 
+            switch(CbGender.SelectedIndex)
+            {
+                case 1:
+                    changesUser.GenderID = 1;
+                    break;
+                case 2:
+                    changesUser.GenderID = 2;
+                    break;
+                default:
+                    MessageBox.Show("Необходимо выбрать пол", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+
+            }
+            
             EFClass.context.SaveChanges();
             MessageBox.Show("Ваш профиль успешно изменен", "Изменение", MessageBoxButton.OK, MessageBoxImage.Information);
             ListLessonWindow listLessonWindow = new ListLessonWindow();
