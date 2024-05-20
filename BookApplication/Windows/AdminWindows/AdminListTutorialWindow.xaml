@@ -273,12 +273,13 @@
                             <ScrollViewer>
                                 <StackPanel Background="#2B2D31">
                                     <TextBlock Text="{Binding Title}"
-                                                   FontSize="22"
-                                                   FontFamily="Whitney Bold"
-                                                   Foreground="#949BA4"
-                                                   HorizontalAlignment="Left"
-                                                   TextWrapping="Wrap"
-                                                   Margin="5 0 0 0"/>
+                                               FontSize="22"
+                                               FontFamily="Whitney Bold"
+                                               Foreground="#949BA4"
+                                               HorizontalAlignment="Left"
+                                               TextWrapping="Wrap"
+                                               ToolTip="{Binding Description}"
+                                               Margin="5 0 0 0"/>
                                     <StackPanel Orientation="Horizontal"
                                                 HorizontalAlignment="Center">
                                         <Button x:Name="BtnRemove"
