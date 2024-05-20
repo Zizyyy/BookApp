@@ -344,7 +344,7 @@
                                                FontSize="16"
                                                Margin="0 0 0 10">
                                     </TextBlock>
-
+                                    
                                     <TextBlock Text="ДАТА РОЖДЕНИЯ"
                                                Foreground="#949BA4"
                                                FontSize="12"

@@ -48,8 +48,8 @@ namespace BookApplication.Windows.AdminWindows
         {
             List<User> listUser = new List<User>();
 
-            listUser = EFClass.context.User.ToList();
-
+            listUser = EFClass.context.User.Where(x => x.RoleID == 1).ToList();
+            
             LvUser.ItemsSource = listUser;
         }
 
