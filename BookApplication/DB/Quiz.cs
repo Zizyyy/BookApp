@@ -15,12 +15,10 @@ namespace BookApplication.DB
     public partial class Quiz
     {
         public int ID { get; set; }
-        public int LessonID { get; set; }
-        public string Title { get; set; }
         public int UserID { get; set; }
+        public System.DateTime DateOfCompletion { get; set; }
         public int Result { get; set; }
     
-        public virtual Lesson Lesson { get; set; }
         public virtual User User { get; set; }
     }
 }

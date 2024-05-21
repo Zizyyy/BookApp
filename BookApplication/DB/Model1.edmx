@@ -25,10 +25,9 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="LessonID" Type="int" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="DateOfCompletion" Type="datetime" Nullable="false" />
           <Property Name="Result" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Role">
@@ -74,18 +73,6 @@
           <Property Name="RoleID" Type="int" Nullable="false" />
           <Property Name="GenderID" Type="int" />
         </EntityType>
-        <Association Name="FK_Quiz_Lesson">
-          <End Role="Lesson" Type="Self.Lesson" Multiplicity="1" />
-          <End Role="Quiz" Type="Self.Quiz" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Lesson">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Quiz">
-              <PropertyRef Name="LessonID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Quiz_User">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Quiz" Type="Self.Quiz" Multiplicity="*" />
@@ -173,10 +160,6 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tutorial" EntityType="Self.Tutorial" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Quiz_Lesson" Association="Self.FK_Quiz_Lesson">
-            <End Role="Lesson" EntitySet="Lesson" />
-            <End Role="Quiz" EntitySet="Quiz" />
-          </AssociationSet>
           <AssociationSet Name="FK_Quiz_User" Association="Self.FK_Quiz_User">
             <End Role="User" EntitySet="User" />
             <End Role="Quiz" EntitySet="Quiz" />
@@ -240,10 +223,6 @@
             <End Role="Gender" EntitySet="Gender" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
-          <AssociationSet Name="FK_Quiz_Lesson" Association="Model.FK_Quiz_Lesson">
-            <End Role="Lesson" EntitySet="Lesson" />
-            <End Role="Quiz" EntitySet="Quiz" />
-          </AssociationSet>
           <AssociationSet Name="FK_Tutorial_Lesson" Association="Model.FK_Tutorial_Lesson">
             <End Role="Lesson" EntitySet="Lesson" />
             <End Role="Tutorial" EntitySet="Tutorial" />
@@ -284,19 +263,16 @@
           <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ContentLesson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PhotoPath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Quiz" Relationship="Model.FK_Quiz_Lesson" FromRole="Lesson" ToRole="Quiz" />
           <NavigationProperty Name="Tutorial" Relationship="Model.FK_Tutorial_Lesson" FromRole="Lesson" ToRole="Tutorial" />
         </EntityType>
         <EntityType Name="Quiz">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="LessonID" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="DateOfCompletion" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Result" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Lesson" Relationship="Model.FK_Quiz_Lesson" FromRole="Quiz" ToRole="Lesson" />
           <NavigationProperty Name="User" Relationship="Model.FK_Quiz_User" FromRole="Quiz" ToRole="User" />
         </EntityType>
         <EntityType Name="Role">
@@ -356,18 +332,6 @@
             </Principal>
             <Dependent Role="User">
               <PropertyRef Name="GenderID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Quiz_Lesson">
-          <End Type="Model.Lesson" Role="Lesson" Multiplicity="1" />
-          <End Type="Model.Quiz" Role="Quiz" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Lesson">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Quiz">
-              <PropertyRef Name="LessonID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -459,9 +423,8 @@
             <EntityTypeMapping TypeName="Model.Quiz">
               <MappingFragment StoreEntitySet="Quiz">
                 <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="DateOfCompletion" ColumnName="DateOfCompletion" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="LessonID" ColumnName="LessonID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

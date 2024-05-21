@@ -171,7 +171,7 @@
                     </Button.Template>
                 </Button>
 
-                <Button x:Name="BtnTest"
+                <!--<Button x:Name="BtnTest"
                     Height="45"
                     Width="200"
                     BorderThickness="0"
@@ -202,7 +202,7 @@
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
-                </Button>
+                </Button>-->
 
                 <Button x:Name="BtnVideoLesson"
                         Height="45"

@@ -42,10 +42,6 @@
       <End Role="Gender" EntitySet="Gender" />
       <End Role="User" EntitySet="User" />
     </AssociationSet>
-    <AssociationSet Name="FK_Quiz_Lesson" Association="Model.FK_Quiz_Lesson">
-      <End Role="Lesson" EntitySet="Lesson" />
-      <End Role="Quiz" EntitySet="Quiz" />
-    </AssociationSet>
     <AssociationSet Name="FK_Tutorial_Lesson" Association="Model.FK_Tutorial_Lesson">
       <End Role="Lesson" EntitySet="Lesson" />
       <End Role="Tutorial" EntitySet="Tutorial" />
@@ -86,19 +82,16 @@
     <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="ContentLesson" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="PhotoPath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Quiz" Relationship="Model.FK_Quiz_Lesson" FromRole="Lesson" ToRole="Quiz" />
     <NavigationProperty Name="Tutorial" Relationship="Model.FK_Tutorial_Lesson" FromRole="Lesson" ToRole="Tutorial" />
   </EntityType>
   <EntityType Name="Quiz">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="LessonID" Type="Int32" Nullable="false" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="DateOfCompletion" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Result" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Lesson" Relationship="Model.FK_Quiz_Lesson" FromRole="Quiz" ToRole="Lesson" />
     <NavigationProperty Name="User" Relationship="Model.FK_Quiz_User" FromRole="Quiz" ToRole="User" />
   </EntityType>
   <EntityType Name="Role">
@@ -158,18 +151,6 @@
       </Principal>
       <Dependent Role="User">
         <PropertyRef Name="GenderID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Quiz_Lesson">
-    <End Type="Model.Lesson" Role="Lesson" Multiplicity="1" />
-    <End Type="Model.Quiz" Role="Quiz" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Lesson">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Quiz">
-        <PropertyRef Name="LessonID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

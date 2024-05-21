@@ -47,9 +47,8 @@
       <EntityTypeMapping TypeName="Model.Quiz">
         <MappingFragment StoreEntitySet="Quiz">
           <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="DateOfCompletion" ColumnName="DateOfCompletion" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

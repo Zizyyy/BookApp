@@ -17,7 +17,6 @@ namespace BookApplication.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Lesson()
         {
-            this.Quiz = new HashSet<Quiz>();
             this.Tutorial = new HashSet<Tutorial>();
         }
     
@@ -26,8 +25,6 @@ namespace BookApplication.DB
         public string ContentLesson { get; set; }
         public string PhotoPath { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Quiz> Quiz { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tutorial> Tutorial { get; set; }
     }

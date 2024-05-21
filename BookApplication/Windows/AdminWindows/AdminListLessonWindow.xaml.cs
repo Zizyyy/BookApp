@@ -108,10 +108,10 @@ namespace BookApplication.Windows.AdminWindows
             Close();
         }
 
-        private void BtnTest_Click(object sender, RoutedEventArgs e)
-        {
+        //private void BtnTest_Click(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
 
         private void BtnUserList_Click(object sender, RoutedEventArgs e)
         {

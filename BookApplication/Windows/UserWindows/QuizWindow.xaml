@@ -1,0 +1,675 @@
+﻿<Window x:Class="BookApplication.Windows.UserWindows.QuizWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookApplication.Windows.UserWindows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="QuizWindow" Height="650" Width="1200"
+        MouseDown="Window_MouseDown">
+
+    <Border>
+        <Border.Background>
+            <SolidColorBrush Color="#313338"/>
+        </Border.Background>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="95"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="65"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="25"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+                <Button x:Name="BtnExit"
+                        Height="30"
+                        Width="75"
+                        BorderThickness="0"
+                        Content="Выйти"
+                        Foreground="#FFFFFF"
+                        FontFamily="Whitney Bold"
+                        Cursor="Hand"
+                        Margin="0 0 35 0"
+                        Click="BtnExit_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#313338"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#35373C"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3B3D44"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                 HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+            <Grid Grid.Row="0" 
+                  Grid.Column="1">
+                <Button x:Name="BtnClose"
+                    Height="24"
+                    Width="25"
+                    BorderThickness="0"
+                    Content="⨉"
+                    FontSize="15"
+                    BorderBrush="Transparent"
+                    Foreground="#A2A7AD"
+                    VerticalAlignment="Top"
+                    Cursor="Hand"
+                    Click="BtnClose_MouseDown">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#F23F42"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <Button x:Name="BtnLesson"
+                        Height="45"
+                        Width="200"
+                        BorderThickness="0"
+                        Content="Лекции"
+                        Foreground="#FFFFFF"
+                        FontFamily="Whitney Bold"
+                        Cursor="Hand"
+                        Margin="0 0 35 0"
+                        Click="BtnLesson_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#5865F2"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#4752C4"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3C45A5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnTest"
+                        Height="45"
+                        Width="200"
+                        BorderThickness="0"
+                        Content="Тест"
+                        Foreground="#FFFFFF"
+                        FontFamily="Whitney Bold"
+                        Cursor="Hand"
+                        Margin="0 0 35 0"
+                        >
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#5865F2"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#4752C4"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3C45A5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnVideoLesson"
+                        Height="45"
+                        Width="200"
+                        BorderThickness="0"
+                        Content="Видеоуроки"
+                        Foreground="#FFFFFF"
+                        FontFamily="Whitney Bold"
+                        Cursor="Hand"
+                        Margin="0 0 35 0"
+                        Click="BtnVideoLesson_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#5865F2"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#4752C4"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#3C45A5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <TextBlock x:Name="TblRole"
+                           FontSize="16"
+                           FontFamily="Whitney"
+                           VerticalAlignment="Center"
+                           Foreground="#949BA4"/>
+                <TextBlock x:Name="TblName"
+                           FontSize="16"
+                           FontFamily="Whitney"
+                           VerticalAlignment="Center"
+                           Foreground="#ffffff"
+                           Margin="5 0 0 0"/>
+                <Button x:Name="BtnProfile"
+                        Height="24"
+                        VerticalAlignment="Center"
+                        Width="24"
+                        Cursor="Hand"
+                        Click="BtnProfile_Click"
+                        Margin="10 0 0 0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                              HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Image Source="/Assets/UserIcon.png"/>
+                </Button>
+            </StackPanel>
+
+            <ScrollViewer Grid.Row="2"
+                          Margin="25 0 0 0">
+                <WrapPanel Orientation="Vertical"
+                           HorizontalAlignment="Left">
+                    <TextBlock Text="Вопрос 1:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap"
+                               Margin="5 0 5 0"/>
+                    <TextBlock Text="Операционная система это:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap"
+                               Margin="5 0 0 5"/>
+                    <RadioButton x:Name="RbOne"
+                                 GroupName="QuestionOne" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Совокупность устройств и программ общего пользования"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbTwo"
+                                 GroupName="QuestionOne" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Это комплекс программ, предназначенных для управления ресурсами компьютера и взаимодействия с пользователем"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbThree"
+                                 GroupName="QuestionOne" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Техническая документация компьютера"
+                                 Margin="10 0 0 0"/>
+
+                    <TextBlock Text="Вопрос 2:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap"
+                               Margin="5 10 5 0"/>
+                    <TextBlock Text="К настольным операционным системам относится:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               TextWrapping="Wrap"
+                               Margin="5 0 0 5"/>
+                    <CheckBox x:Name="CbFirst"
+                              Foreground="#FFFFFF"
+                              FontFamily="Whitney"
+                              VerticalContentAlignment="Center"
+                              FontSize="16"
+                              HorizontalAlignment="Left"
+                              Content="MS Windows"
+                              Margin="10 0 0 0"/>
+                    <CheckBox x:Name="CbSecond"
+                              Foreground="#FFFFFF"
+                              FontFamily="Whitney"
+                              VerticalContentAlignment="Center"
+                              FontSize="16"
+                              Content="Android"
+                              Margin="10 0 0 0"/>
+                    <CheckBox x:Name="CbThird"
+                              Foreground="#FFFFFF"
+                              FontFamily="Whitney"
+                              VerticalContentAlignment="Center"
+                              FontSize="16"
+                              Content="Ubuntu"
+                              Margin="10 0 0 0"/>
+                    <CheckBox x:Name="CbFourth"
+                              Foreground="#FFFFFF"
+                              FontFamily="Whitney"
+                              VerticalContentAlignment="Center"
+                              FontSize="16"
+                              Content="MacOS"
+                              Margin="10 0 0 0"/>
+
+                    <TextBlock Text="Вопрос 3:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap"
+                               Margin="5 10 5 0"/>
+                    <TextBlock Text="Создатель операционной системы Linux:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               TextWrapping="Wrap"
+                               Margin="5 0 0 5"/>
+                    <RadioButton x:Name="RbFourth"
+                                 GroupName="QuestionThree" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Линус Торвальдс"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbFifth"
+                                 GroupName="QuestionThree" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Билл Гейтс"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbSixth"
+                                 GroupName="QuestionThree" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Стив Джобс"
+                                 Margin="10 0 0 0"/>
+
+                    <TextBlock Text="Вопрос 4:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap"
+                               Margin="5 10 5 0"/>
+                    <TextBlock Text="Принципиальные отличия Windows от Linux:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               TextWrapping="Wrap"
+                               Margin="5 0 0 5"/>
+                    <RadioButton x:Name="RbSeventh"
+                                 GroupName="QuestionFour" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Открытость кода операционной системы"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbEighth"
+                                 GroupName="QuestionFour" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Простота испльзования"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbNinth"
+                                 GroupName="QuestionFour" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Широкая известность и популярность"
+                                 Margin="10 0 0 0"/>
+                    
+                    <TextBlock Text="Вопрос 5:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap"
+                               Margin="5 10 5 0"/>
+                    <TextBlock Text="Операционные системы MacOS используются преимущественно на компьютерах, выпускаемых фирмой:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               TextWrapping="Wrap"
+                               Margin="5 0 0 5"/>
+                    <RadioButton x:Name="RbTenth"
+                                 GroupName="QuestionFive" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Microsoft"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbEleventh"
+                                 GroupName="QuestionFive" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Asus"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbTwelfth"
+                                 GroupName="QuestionFive" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Apple"
+                                 Margin="10 0 0 0"/>
+                    <TextBlock Text="Вопрос 6:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap"
+                               Margin="5 10 5 0"/>
+                    <TextBlock Text="Утилита это:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               TextWrapping="Wrap"
+                               Margin="5 0 0 5"/>
+                    <RadioButton x:Name="RbThirteenth"
+                                 GroupName="QuestionSix" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="это любое приложение, установленное на компьютере"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbFourteenth"
+                                 GroupName="QuestionSix" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="это игра на компьютере"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbFifteenth"
+                                 GroupName="QuestionSix" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="это программа для настройки и помощи в выполнении различных задач"
+                                 Margin="10 0 0 0"/>
+                    
+                    <TextBlock Text="Вопрос 7:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap"
+                               Margin="5 10 5 0"/>
+                    <TextBlock Text="Программы, предназначенные для обслуживания конкретных периферийных устройств:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               TextWrapping="Wrap"
+                               Margin="5 0 0 5"/>
+                    <CheckBox x:Name="CbFifth"
+                              Foreground="#FFFFFF"
+                              FontFamily="Whitney"
+                              VerticalContentAlignment="Center"
+                              FontSize="16"
+                              Content="Утилиты"
+                              Margin="10 0 0 0"/>
+                    <CheckBox x:Name="CbSixth"
+                              Foreground="#FFFFFF"
+                              FontFamily="Whitney"
+                              VerticalContentAlignment="Center"
+                              FontSize="16"
+                              Content="Библиотеки"
+                              Margin="10 0 0 0"/>
+                    <CheckBox x:Name="CbSeventh"
+                              Foreground="#FFFFFF"
+                              FontFamily="Whitney"
+                              VerticalContentAlignment="Center"
+                              FontSize="16"
+                              Content="Драйвера"
+                              Margin="10 0 0 0"/>
+                    <CheckBox x:Name="CbEighth"
+                              Foreground="#FFFFFF"
+                              FontFamily="Whitney"
+                              VerticalContentAlignment="Center"
+                              FontSize="16"
+                              Content="Оболочки"
+                              Margin="10 0 0 0"/>
+
+                    <TextBlock Text="Вопрос 8:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap"
+                               Margin="5 10 5 0"/>
+                    <TextBlock Text="Что такое графическая оболочка операционной системы?"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               TextWrapping="Wrap"
+                               Margin="5 0 0 5"/>
+                    <RadioButton x:Name="RbSixteenth"
+                                 GroupName="QuestionSeven" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Программа, управляющая всеми процессами компьютера"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbSeventeenth"
+                                 GroupName="QuestionSeven" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Интерфейс, обеспечивающий взаимодействие пользователя с системой"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbEighteenth"
+                                 GroupName="QuestionSeven" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Тип интернет-браузера"
+                                 Margin="10 0 0 0"/>
+
+                    <TextBlock Text="Вопрос 9:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap"
+                               Margin="5 10 5 0"/>
+                    <TextBlock Text="Какая компания разработала операционную систему Android?"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               TextWrapping="Wrap"
+                               Margin="5 0 0 5"/>
+                    <RadioButton x:Name="RbNineteenth"
+                                 GroupName="QuestionEight" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Microsoft"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbTwentieth"
+                                 GroupName="QuestionEight" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Google"
+                                 Margin="10 0 0 0"/>
+                    <RadioButton x:Name="RbtwentyFirst"
+                                 GroupName="QuestionEight" 
+                                 Foreground="#FFFFFF"
+                                 FontFamily="Whitney"
+                                 FontSize="18"
+                                 VerticalContentAlignment="Center"
+                                 Content="Apple"
+                                 Margin="10 0 0 0"/>
+                    <TextBlock Text="Вопрос 10:"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap"
+                               Margin="5 10 5 0"/>
+                    <TextBlock Text="Что обозначает аббревиатура BIOS в компьютерной терминологии?"
+                               FontSize="22"
+                               FontFamily="Whitney Bold"
+                               Foreground="#949BA4"
+                               TextWrapping="Wrap"
+                               Margin="5 0 0 5"/>
+                    <CheckBox x:Name="CbNine"
+                              Foreground="#FFFFFF"
+                              FontFamily="Whitney"
+                              VerticalContentAlignment="Center"
+                              FontSize="16"
+                              Content="Basic Input/Output System"
+                              Margin="10 0 0 0"/>
+                    <CheckBox x:Name="CbTen"
+                              Foreground="#FFFFFF"
+                              FontFamily="Whitney"
+                              VerticalContentAlignment="Center"
+                              FontSize="16"
+                              Content="Binary Input/Output System"
+                              Margin="10 0 0 0"/>
+                    <CheckBox x:Name="CbEleven"
+                              Foreground="#FFFFFF"
+                              FontFamily="Whitney"
+                              VerticalContentAlignment="Center"
+                              FontSize="16"
+                              Content="Business Integrated Operating System"
+                              Margin="10 0 0 0"/>
+                </WrapPanel>
+            </ScrollViewer>
+
+            <Button x:Name="BtnComplete"
+                    Height="45"
+                    Width="200"
+                    BorderThickness="0"
+                    Content="Завершить"
+                    Grid.Row="3"
+                    Foreground="#FFFFFF"
+                    FontFamily="Whitney Bold"
+                    Cursor="Hand"
+                    Click="BtnComplete_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#5865F2"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4752C4"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#3C45A5"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+    </Border>
+</Window>

@@ -83,7 +83,8 @@ namespace BookApplication.Windows.UserWindows
 
         private void BtnTest_Click(object sender, RoutedEventArgs e)
         {
-
+            QuizWindow.Auth(User).Show();
+            Close();
         }
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)

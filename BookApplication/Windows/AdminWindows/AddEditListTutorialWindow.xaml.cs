@@ -64,6 +64,9 @@ namespace BookApplication.Windows.AdminWindows
                 editTutorial.LessonId = CbListLesson.SelectedIndex + 1;
 
                 EFClass.context.SaveChanges();
+                AdminListTutorialWindow adminListTutorial = new AdminListTutorialWindow();
+                adminListTutorial.Show();
+                this.Close();
             } 
             else
             {
@@ -72,6 +75,11 @@ namespace BookApplication.Windows.AdminWindows
                 tutorial.DateOfAddition = DateTime.Now;
                 tutorial.UrlPath = TbUrlPath.Text;
                 tutorial.LessonId = CbListLesson.SelectedIndex + 1;
+
+                MessageBox.Show("Видеорок успешно добавлена", "Добавление", MessageBoxButton.OK, MessageBoxImage.Information);
+                AdminListTutorialWindow adminListTutorial = new AdminListTutorialWindow();
+                adminListTutorial.Show();
+                this.Close();
             }
         }
 

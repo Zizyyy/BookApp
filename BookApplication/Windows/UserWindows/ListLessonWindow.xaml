@@ -142,7 +142,7 @@
                         Height="45"
                         Width="200"
                         BorderThickness="0"
-                        Content="Тесты"
+                        Content="Тест"
                         Foreground="#FFFFFF"
                         FontFamily="Whitney Bold"
                         Cursor="Hand"
