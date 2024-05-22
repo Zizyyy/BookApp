@@ -53,7 +53,6 @@ namespace BookApplication.Windows
 
             if (authUser.RoleID == 1)
             {
-                //ListLessonWindow lessonWindow = new ListLessonWindow();
                 ListLessonWindow.Auth(authUser).Show();
 
                 Close();

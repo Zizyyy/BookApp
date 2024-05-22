@@ -95,6 +95,15 @@
                 </Button.Template>
             </Button>
 
+            <StackPanel Grid.Row="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <TextBlock Text="Профиль"
+                           FontSize="16"
+                           FontFamily="Whitney"
+                           Foreground="#949BA4"/>
+            </StackPanel>
+            
             <StackPanel Orientation ="Horizontal"
                         Height="Auto"
                         Grid.Row="1"

@@ -56,23 +56,7 @@ namespace BookApplication.Windows.AdminWindows
             {
                 try
                 {
-                    //using (MemoryStream stream = new MemoryStream(Convert.ToByte(lesson.PhotoPath)))
-                    //{
-                    //    BitmapImage bitmapImage = new BitmapImage();
-                    //    bitmapImage.BeginInit();
-                    //    bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-                    //    bitmapImage.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
-                    //    bitmapImage.StreamSource = stream;
-                    //    bitmapImage.EndInit();
-
-                    //    if (lesson.PhotoPath != null)
-                    //    {
-                    //        ImgLesson.Source = bitmapImage;
-                    //    }
-                    //}
-                    
                         ImgLesson.Source = new BitmapImage(new Uri($@"{pathImage}"));
-
                 }
                 catch (Exception e)
                 {
@@ -149,8 +133,8 @@ namespace BookApplication.Windows.AdminWindows
 
         private void BtnClose_MouseDown(object sender, RoutedEventArgs e)
         {
-            ListLessonWindow listLessonWindow = new ListLessonWindow();
-            listLessonWindow.Show();
+            AdminListLessonWindow adminListLessonWindow = new AdminListLessonWindow();
+            adminListLessonWindow.Show();
             this.Close();
         }
 

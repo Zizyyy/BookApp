@@ -10,7 +10,7 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent"
-        Title="AuthorizationView" Height="1000" Width="800"
+        Title="AuthorizationView" Height="750" Width="800"
         MouseDown="Window_MouseDown">
 
     <Border>

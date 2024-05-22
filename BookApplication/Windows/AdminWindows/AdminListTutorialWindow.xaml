@@ -69,6 +69,15 @@
                 </Button>
             </StackPanel>
 
+            <StackPanel Grid.Row="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <TextBlock Text="Видеоуроки"
+                           FontSize="16"
+                           FontFamily="Whitney"
+                           Foreground="#949BA4"/>
+            </StackPanel>
+            
             <Grid Grid.Row="0" 
                   Grid.Column="1">
                 <Button x:Name="BtnClose"
@@ -144,7 +153,7 @@
                         Height="45"
                         Width="200"
                         BorderThickness="0"
-                        Content="Лекции"
+                        Content="Уроки"
                         Foreground="#FFFFFF"
                         FontFamily="Whitney Bold"
                         Cursor="Hand"

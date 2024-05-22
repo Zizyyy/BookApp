@@ -149,8 +149,8 @@ namespace BookApplication.Windows.AdminWindows
             {
                 return;
             }
-            var lesson = button.DataContext as Lesson;
-            EFClass.context.Lesson.Remove(lesson);
+            var tutorial = button.DataContext as Tutorial;
+            EFClass.context.Tutorial.Remove(tutorial);
             EFClass.context.SaveChanges();
             MessageBox.Show("Урок удален", "Удаление", MessageBoxButton.OK, MessageBoxImage.Information);
 

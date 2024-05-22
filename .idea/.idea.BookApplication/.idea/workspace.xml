@@ -9,31 +9,58 @@
   <component name="ChangeListManager">
     <list default="true" id="bd3d2a3a-8f75-49fe-b5de-acca8a811bf7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookApplication/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/AddEditLessonWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/AddEditLessonWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/AddEditLessonWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/AddEditLessonWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/AdminListLessonWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/AdminListLessonWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/AdminListTutorialWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/AdminListTutorialWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/AdminListTutorialWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/AdminListTutorialWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/UserListWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/UserListWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/UserListWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/AdminWindows/UserListWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/Windows/AuthorizationWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/AuthorizationWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/Windows/AuthorizationWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/AuthorizationWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/Windows/UserWindows/ListLessonWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/UserWindows/ListLessonWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/Windows/UserWindows/ListVideoWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/UserWindows/ListVideoWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookApplication/Windows/UserWindows/ProfileUserWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/UserWindows/ProfileUserWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/Windows/UserWindows/ProfileUserWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/UserWindows/ProfileUserWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/Windows/UserWindows/QuizWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/Windows/UserWindows/QuizWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookApplication/bin/Debug/BookApplication.exe" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/bin/Debug/BookApplication.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookApplication/bin/Debug/BookApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/bin/Debug/BookApplication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/App.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication.exe" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication.g.resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication_MarkupCompile.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication_MarkupCompile.i.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication_MarkupCompile.i.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication_MarkupCompile.i.lref" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication_MarkupCompile.i.lref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication_MarkupCompile.lref" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AddEditListTutorialWindow.baml" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AddEditListTutorialWindow.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AddEditListTutorialWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AddEditListTutorialWindow.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AddEditListTutorialWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AddEditListTutorialWindow.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication_MarkupCompile.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/BookApplication_MarkupCompile.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/MainWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AddEditLessonWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AddEditLessonWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AddEditLessonWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AddEditLessonWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AddEditLessonWindow.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AddEditListTutorialWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AdminListLessonWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AdminListLessonWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AdminListLessonWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AdminListLessonWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AdminListLessonWindow.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AdminListTutorialWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AdminListTutorialWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AdminListTutorialWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AdminListTutorialWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AdminListTutorialWindow.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AdminOpenedVideoWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/AdminSelectedLessonWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/UserListWindow.baml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/UserListWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/UserListWindow.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/UserListWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AdminWindows/UserListWindow.g.i.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AuthorizationWindow.baml" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AuthorizationWindow.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AuthorizationWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AuthorizationWindow.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AuthorizationWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AuthorizationWindow.g.i.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ProfileUserWindow.baml" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ProfileUserWindow.baml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/AuthorizationWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/RegistrationWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ListLessonWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ListLessonWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ListLessonWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ListLessonWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ListLessonWindow.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ListVideoWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ListVideoWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ListVideoWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ListVideoWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ListVideoWindow.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/OpenedVideoWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ProfileUserWindow.baml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ProfileUserWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ProfileUserWindow.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ProfileUserWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/ProfileUserWindow.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/QuizWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/QuizWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/QuizWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/QuizWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/QuizWindow.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookApplication/obj/Debug/Windows/UserWindows/SelectedLessonWindow.baml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,22 +70,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "state": "OPEN"
+      &quot;state&quot;: &quot;OPEN&quot;
     }
   ],
-  "lastFilter": {
-    "state": "OPEN"
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Zizyyy/BookApp.git",
-    "accountId": "494f3e05-3456-4037-ad55-c05953752e4d"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Zizyyy/BookApp.git&quot;,
+    &quot;accountId&quot;: &quot;494f3e05-3456-4037-ad55-c05953752e4d&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/BookApplication/Windows/AdminWindows/UserListWindow.xaml" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -72,27 +99,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.BookApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.BookApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Popcika\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Popcika\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Popcika\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Popcika\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Popcika\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Popcika\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="BookApplication" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -123,6 +150,9 @@
       <updated>1715786757722</updated>
       <workItem from="1715786760075" duration="166000" />
       <workItem from="1716211027810" duration="2420000" />
+      <workItem from="1716312900361" duration="862000" />
+      <workItem from="1716318507931" duration="10126000" />
+      <workItem from="1716371933058" duration="301000" />
     </task>
     <servers />
   </component>
